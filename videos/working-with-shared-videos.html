@@ -1,0 +1,739 @@
+﻿<!doctype html>
+<html lang="es-es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  
+  <title>Trabajar con vídeos compartidos</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-ultra.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-ultra.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-super.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-super.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-black.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-black.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-bold.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-bold.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-medium.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-medium.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+  <script src="/assets/js/sajari-head.js"></script>
+</head>
+
+<body class="body">
+
+<header>
+  <div class="div-header">
+    <a href="/"><span class="product-logo" style="font-family:'Balto Web','Public Sans';font-size:2em;font-weight:bold;">BRIGHTCOVE ENGAGE<sup>™</sup></span></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">Seleccionar idioma</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+
+<script>
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+    <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+      <option value="">Otros documentos de Brightcove</option>
+      
+        
+          <option value="https://support.brightcove.com">Documentación Inicio</option>
+        
+      
+        
+          <option value="https://audience.support.brightcove.com">Audiencia de Brightcove</option>
+        
+      
+        
+          <option value="https://beacon.support.brightcove.com">Baliza Brightcove</option>
+        
+      
+        
+          <option value="https://campaign.support.brightcove.com">Campaña de Brightcove</option>
+        
+      
+        
+          <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
+        
+      
+        
+          <option value="https://live.support.brightcove.com">Brightcove Live</option>
+        
+      
+        
+          <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
+        
+      
+        
+          <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+        
+      
+        
+          <option value="https://social.support.brightcove.com">Brightcove Social</option>
+        
+      
+        
+          <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
+        
+      
+        
+          <option value="https://player.support.brightcove.com">Desarrollo de jugadores de Brightcove</option>
+        
+      
+        
+          <option value="https://apis.support.brightcove.com">API para la plataforma de Video Cloud</option>
+        
+      
+        
+          <option value="https://sdks.support.brightcove.com">SDK de dispositivos de Video Cloud</option>
+        
+      
+        
+          <option value="https://integrations.support.brightcove.com">Integraciones y conectores CMS</option>
+        
+      
+        
+          <option value="https://general.support.brightcove.com">Información general de Video Cloud</option>
+        
+      
+        
+          <option value="https://zencoder.support.brightcove.com">Zencoder</option>
+        
+      
+    </select>
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="soporte"/> Contactar con Soporte</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/">Estado<img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="estado del sistema"/> del sistema</a></span> <br/>
+    
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb arr-right">
+      
+      <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+      
+      
+      
+      <li class="breadcrumb-item">Gestión de Vídeos<a href="/videos/"></a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">Trabajar con vídeos compartidos</li>
+    </ol>
+  </nav>
+</header>
+<div class="container">
+    <div class="row">
+      <div class="col-sm-3 left-side-bar">
+        <nav class="sidenav" id="side_nav">
+          
+            
+            <h5><a href="/index.html">Inicio</a></h5>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/get-started/index.html">Empezar <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/get-started/brightcove-engage-system-requirements.html">Requisitos del sistema Brightcove Engage</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/brightcove-engage-training-videos.html">Vídeos de capacitación de Brightcove Engage</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/overview-create-edit-publish-mobile-app-exp.html">Creación de experiencias de aplicaciones móviles</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/overview-create-edit-publish-web-exp.html">Creación de experiencias web</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/getting-started-brightcove-engage.html">Introducción a Brightcove Engage</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/getting-started-brightcove-engage-trial.html">Introducción a su prueba de Brightcove Engage</a></li>
+                  
+                
+                  
+                    <li>Paso a paso - Creación de una experiencia de aplicación móvil<a href="/get-started/step-by-step-mobile-app.html"></a></li>
+                  
+                
+                  
+                    <li>Paso a paso - Creación de una experiencia web<a href="/get-started/step-by-step-web-exp.html"></a></li>
+                  
+                
+                  
+                    <li>Uso de la aplicación Brightcove Engage<a href="/get-started/using-brightcove-engage-app.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Gestión de Vídeos +<a href="/videos/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/videos/adding-text-tracks-to-a-video.html">Adición de pistas de texto</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/capturing-poster-and-thumbnail-images.html">Captura de póster y imágenes en miniatura</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/configuring-video-availability.html">Configuración de la disponibilidad de vídeo</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/creating-and-managing-playlists.html">Creación y administración de listas de reproducción</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/editing-video-properties.html">Edición de propiedades de vídeo</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/editing-video-properties-using-quick-edit.html">Edición de propiedades de vídeo con edición rápida</a></li>
+                  
+                
+                  
+                    <li>Exportar datos de vídeo<a href="/videos/exporting-video-data.html"></a></li>
+                  
+                
+                  
+                    <li>Gestión de Vídeos<a href="/videos/managing-videos.html"></a></li>
+                  
+                
+                  
+                    <li>Búsqueda de vídeos<a href="/videos/how-to-search-for-videos.html"></a></li>
+                  
+                
+                  
+                    <li>Cargar imágenes de póster y miniatura<a href="/videos/uploading-poster-and-thumbnail-images.html"></a></li>
+                  
+                
+                  
+                    <li>Subir vídeos<a href="/videos/uploading-videos.html"></a></li>
+                  
+                
+                  
+                    <li>Trabajar con vídeos compartidos<a href="/videos/working-with-shared-videos.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/experiences/index.html">Creación de experiencias <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/experiences/adding-logo-mobile-app-experience.html">Agregar un logotipo a las páginas de experiencia de aplicaciones móviles</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/adding-objects-web-experience-pages.html">Adición de imágenes, texto y vínculos a páginas de experiencia web</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/adding-videos-experience.html">Adición de vídeos a una experiencia</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/assigning-custom-domain-web-experience.html">Asignación de un dominio personalizado a una experiencia Web</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/configuring-custom-domains-and-ssl.html">Configuración de dominios personalizados y SSL</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/configuring-experience-settings.html">Configuración de la experiencia</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/configuring-single-sign-active-directory-federation-services.html">Configuración de inicio de sesión único con ADFS</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/controlling-access-experience.html">Control del acceso a una experiencia</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/creating-access-control-profiles.html">Creación de perfiles de control de acceso</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/creating-and-managing-push-notifications.html">Creación de notificaciones push</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/creating-and-managing-experiences.html">Creación y gestión de experiencias</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/using-experience-editor-customize-mobile-app-experience.html">Personalización de experiencias de aplicaciones móviles</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/using-experience-editor-customize-web-experience.html">Personalización de experiencias web</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/editing-experience-details.html">Detalles de la experiencia de edición</a></li>
+                  
+                
+                  
+                    <li>Administrar colecciones<a href="/experiences/managing-collections.html"></a></li>
+                  
+                
+                  
+                    <li>Gestión de Proyectos<a href="/experiences/managing-projects.html"></a></li>
+                  
+                
+                  
+                    <li>Descripción general de las plantillas de experiencia<a href="/experiences/overview-experience-templates.html"></a></li>
+                  
+                
+                  
+                    <li>Vista previa y publicación de experiencias de aplicaciones móviles<a href="/experiences/previewing-publishing-mobile-app-experience.html"></a></li>
+                  
+                
+                  
+                    <li>Vista previa y publicación de experiencias web<a href="/experiences/previewing-publishing-web-experience.html"></a></li>
+                  
+                
+                  
+                    <li>Proteger una experiencia web con SSL<a href="/experiences/securing-web-experience-ssl.html"></a></li>
+                  
+                
+                  
+                    <li>Protección de experiencias con Auth0<a href="/experiences/securing-experiences-auth0.html"></a></li>
+                  
+                
+                  
+                    <li>Protección de experiencias con Auth0 sin contraseña<a href="/experiences/securing-experiences-passwordless.html"></a></li>
+                  
+                
+                  
+                    <li>Asegurar experiencias con Okta<a href="/experiences/securing-experiences-okta.html"></a></li>
+                  
+                
+                  
+                    <li>Protección de experiencias con PingOne<a href="/experiences/securing-experiences-pingone.html"></a></li>
+                  
+                
+                  
+                    <li>Diseño de experiencias de aplicaciones móviles<a href="/experiences/styling-mobile-app-experiences.html"></a></li>
+                  
+                
+                  
+                    <li>Estilo de experiencias web<a href="/experiences/styling-web-experiences.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Gestión de eventos en directo +<a href="/live/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/live/creating-and-managing-live-events-using-live-module.html">Creación y administración de eventos en directo</a></li>
+                  
+                
+                  
+                    <li><a href="/live/creating-video-clips.html">Creación de clips de vídeo</a></li>
+                  
+                
+                  
+                    <li>Uso de la sala de control<a href="/live/viewing-live-event-info-control-room.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Revisión de Analytics +<a href="/analytics/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li>Revisión de análisis de vídeo<a href="/analytics/reviewing-video-analytics.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/admin/index.html">Administrar cuentas <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li>Gestión de la información de cuenta<a href="/admin/managing-account-information.html"></a></li>
+                  
+                
+                  
+                    <li>Administrar la configuración de cuenta<a href="/admin/managing-account-settings.html"></a></li>
+                  
+                
+                  
+                    <li>Administrar la configuración de uso compartido de<a href="/admin/managing-media-sharing-settings.html"></a></li>
+                  
+                
+                  
+                    <li>Gestión de la información de perfil<a href="/admin/managing-profile-information.html"></a></li>
+                  
+                
+                  
+                    <li>Administrar usuarios<a href="/admin/managing-users.html"></a></li>
+                  
+                
+                  
+                    <li>Administrar campos de vídeo<a href="/admin/managing-video-fields.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Notas de la versión +<a href="/release-notes/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/release-notes/2020.html">2020</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Soporte +<a href="/support/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/support/brightcove-answer.html">Respuestas de Brightcove</a></li>
+                  
+                
+                  
+                    <li>Visualización de la página Estado del Sistema de Brightcove<a href="/support/viewing-brightcove-system-status-page.html"></a></li>
+                  
+                
+                  
+                    <li><a href="/support/contact-sales.html">Contacto con Ventas</a></li>
+                  
+                
+                  
+                    <li>Apertura de un caso de soporte<a href="/support/opening-case-with-brightcove-support.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+  <!-- bootstrap layout -->
+
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menú de navegación"/></p>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">Contenido de la página</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+<!-- open in new tab/window -->
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="abrir en una nueva pestaña" style="margin-top:4em;width: 1.5em;"/></a>
+
+
+
+  
+    
+
+
+<article class="bcls-article">
+  <h1>Trabajar con vídeos compartidos</h1>
+  <summary>En este tema aprenderá cómo trabajar con vídeos compartidos.</summary>
+  <section class="bcls-section">
+    <p>Gracias a las funciones de compartición de medios, los editores solo necesitan subir cada vídeo una única vez para compartirlo con otras cuentas. Dichas cuentas pueden ser propias, corporativas o incluso de otros editores. Los vídeos compartidos se pueden usar de forma independiente en otras cuentas. La compartición de medios se suele emplear cuando los editores desean mantener una cuenta principal de contenido de vídeo y compartir vídeos con otras divisiones y subsidiarias de la organización.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="terminology">Terminología para compartir medios</h2>
+    <p>En este artículo se emplea la siguiente terminología:</p>
+    <ul>
+      <li>Maestro - La cuenta que creó el video original.<strong></strong> El Master es el propietario del contenido y es responsable de configurar, administrar y proporcionar contenido a los afiliados.</li>
+      <li><strong>Afiliado</strong> - La cuenta que está recibiendo el video. El afiliado puede aceptar contenido compartido a él de un maestro.</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="manage">Administración de relaciones de uso compartido de medios</h2>
+    <p>Antes de que los vídeos se puedan <a href="/admin/managing-media-sharing-settings.html">compartir entre cuentas, la configuración de uso compartido de medios</a> debe configurarse mediante el menú Administración (icono de engranaje (<img class="bcls-image--no-border" alt="" src="/assets/images/videos/gear-icon.png"/>) y, a continuación, <strong> Uso compartido de medios</strong>). Tenga en cuenta que sólo los administradores de cuentas tienen acceso al menú Administración. Si desea compartir vídeos con otras cuentas, se deben agregar afiliados y las cuentas de afiliados deben aceptar la relación. Las cuentas principales y afiliadas pueden terminar la relación en cualquier momento. Al finalizar una relación de uso compartido de medios no se eliminan los vídeos compartidos de las cuentas de afiliados.<strong></strong> Si desea eliminar vídeos compartidos de la cuenta de un afiliado, debe eliminarlos de su propia cuenta (maestra) o abrir las propiedades del vídeo, ir a la sección Compartir multimedia y hacer clic en el icono Quitar vídeo de la cuenta de afiliado.<strong></strong><strong></strong></p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/videos/media-sharing-section.png"/></figure>
+    <p>Para obtener información sobre cómo configurar los ajustes de Uso compartido de medios, consulte <a href="/admin/managing-media-sharing-settings.html">Administrar la configuración de uso compartido de medios</a>.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="sharing">Compartir vídeos</h2>
+    <p>De forma predeterminada, la capacidad de compartir vídeos está disponible para todos los usuarios de tu cuenta. Para compartir vídeos, siga estos pasos:</p>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>Abra la página Vídeos.<strong></strong></li>
+      <li>Seleccione uno o varios vídeos y, a continuación, haga clic en <strong>Más &gt; compartir</strong>.
+        <aside class="bcls-aside bcls-aside--information language-editable">Nota: Al compartir un gran número de vídeos, Brightcove recomienda compartir como máximo 50 vídeos a la vez. Compartir un gran número de vídeos a la vez puede causar un error de tiempo de espera.</aside>
+      </li>
+      <li>Seleccione las cuentas de afiliado a las que compartir los vídeos y, a continuación, haga clic en Compartir.<strong></strong> El campo de búsqueda se puede utilizar para buscar un ID de cuenta. El campo de búsqueda admite búsquedas difusas, por lo que al introducir parte de un ID se devolverán coincidencias.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/videos/media-sharing-select-account.png"/></figure>
+      </li>
+    </ol>
+    <p>Es posible volver a compartir vídeos (compartir vídeos previamente compartidos en la misma cuenta). Al hacerlo, se reemplazarán los cambios de metadatos de vídeo realizados por la cuenta de afiliado con los valores de la cuenta maestra (compartir). Tenga cuidado al volver a compartir vídeos.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="review">Revisión de vídeos compartidos</h2>
+    <p>Las cuentas de afiliados tienen la capacidad de configurar un <strong>modo de aceptación</strong> para cada cuenta maestra. Cuando el <strong>modo de aceptación</strong> es <strong>Automático</strong> , los vídeos compartidos aparecerán en la lista de vídeos de la cuenta de afiliados en la página <strong>Vídeos</strong> . Cuando el <strong>modo de aceptación</strong> es <strong>Manual</strong> , aparecerá un enlace <strong>Comparte pendiente</strong> que muestra el número de vídeos compartidos en la página <strong>Vídeos</strong> .</p>
+    <aside class="bcls-aside bcls-aside--information language-editable">Nota: Para obtener información sobre cómo configurar el modo de aceptación, consulte <a href="/admin/managing-media-sharing-settings.html">Administrar la configuración de uso compartido de medios</a>.</aside>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/videos/shares-pending.png"/></figure>
+    <p>Cuando se hace clic en el botón <strong>Comparticiones pendientes</strong> se muestra una lista de los vídeos compartidos.</p>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/videos/shares-pending-video-list.png"/></figure>
+    <p>Desde la lista de comparticiones pendientes es posible:</p>
+    <ul>
+      <li>Rechazar: rechazar el vídeo compartido y no incluirlo en su cuenta.<strong></strong> Rechazar un vídeo compartido no impide que el maestro lo vuelva a compartir en tu cuenta en el futuro.</li>
+      <li><strong>Aceptar</strong> - Para aceptar el vídeo compartido en su cuenta.</li>
+    </ul>
+    <p>La vista rápida se puede utilizar para abrir un panel para ver las propiedades de vídeo.<strong></strong> Una vez que aceptes un vídeo compartido, aparecerá en la página <strong>Vídeos</strong> con los otros vídeos de la cuenta.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="view">Vídeos compartidos en la página Vídeos</h2>
+    <p>Los vídeos compartidos mostrarán un icono para compartir en la esquina superior de la miniatura del vídeo para indicar que el vídeo se ha compartido dentro o fuera de una cuenta.</p>
+    <h3>Vídeo compartido desde otra cuenta</h3>
+    <p>
+      <figure class="bcls-figure"><img alt="" src="/assets/images/videos/shared-in-example.png"/></figure>
+    </p>
+    <p>Haga clic en el título del vídeo y revise las propiedades de Información de vídeo para ver qué cuenta compartió el vídeo.</p>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/videos/shared-in-properties.png"/></figure>
+    <h3>Vídeo compartido con otra cuenta</h3>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/videos/shared-out-example.png"/></figure>
+    <p>Para ver el estado de los vídeos compartidos con las cuentas de afiliados, haga clic en el título del vídeo y busque la sección <strong>Compartir multimedia</strong> de la página de propiedades del vídeo.</p>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/videos/media-sharing-section.png"/></figure>
+    <p>Los errores también pueden aparecer aquí. Por ejemplo, si está marcada <strong>Forzar coincidencia de campos personalizados</strong> , la cuenta de afiliado debe tener los mismos campos personalizados que la cuenta maestra o cualquier acción compartida fallará.</p>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/videos/media-sharing-error.png"/></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="delete">Eliminación de vídeos compartidos</h2>
+    <p>Cuando se elimina un vídeo compartido de una cuenta maestra, se muestra un mensaje recordándole que al eliminar el vídeo compartido se eliminará de todas las cuentas de afiliados con las que lo haya compartido.</p>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/videos/shared-video-delete.png"/></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="properties">Propiedades de vídeo compartidas</h2>
+    <p>Cuando un vídeo se comparte con una cuenta de afiliado, se copian las siguientes propiedades de vídeo con el vídeo compartido:</p>
+    <ul>
+      <li>Nombre</li>
+      <li>Descripción corta y larga</li>
+      <li>Enlace relacionado (texto del enlace y URL del enlace)</li>
+      <li>Etiquetas</li>
+      <li>Imágenes de póster y miniatura - De forma predeterminada, las imágenes de póster y miniatura de los vídeos maestros se utilizarán en las cuentas de afiliados. Si se realizan cambios en el póster y/o miniatura de la cuenta maestra, dichos cambios se reflejarán en las cuentas de afiliados <strong>a menos que</strong> la cuenta de afiliado haya generado previamente nuevas imágenes de póster o miniatura. Una vez que la cuenta de afiliado realice un cambio en el póster o en las imágenes en miniatura, los cambios realizados en el póster o miniatura realizados en la cuenta principal no se propagarán a la cuenta de afiliado.<strong></strong></li>
+      <li>Pistas de texto: los afiliados no tienen la capacidad de eliminar o editar las propiedades de las pistas de texto de los vídeos compartidos.</li>
+      <li>Programación de la fecha de inicio y de fin</li>
+      <li>Campos personalizados: si la cuenta maestra está configurada para <strong>exigir coincidencias de campos personalizados</strong>, las cuentas de afiliados deben tener los mismos campos personalizados que la cuenta maestra o cualquier acción compartida fallará.</li>
+    </ul>
+    <p>Tenga en cuenta que si el campo personalizado es un tipo de lista, el campo personalizado debe tener las mismas opciones en ambas cuentas.</p>
+    <p>El vídeo compartido tiene todos los valores de estos campos de metadatos de vídeo que tenía el vídeo maestro en el momento en que se compartió. Sin embargo, a partir de ese momento, la copia maestra y la copia afiliada se convierten en entidades independientes:</p>
+    <ul>
+      <li>Los archivos de vídeo no se copian cuando utiliza la opción de compartir medios; únicamente se copian los metadatos del vídeo. El vídeo compartido apunta al archivo de vídeo original de la cuenta maestra.</li>
+      <li>Si el vídeo se elimina de la cuenta maestra, el vídeo se elimina de todas las cuentas de afiliados.</li>
+      <li>Cualquier cambio que un afiliado realice en un vídeo no afectará al original ni a ninguna otra copia compartida. Si un afiliado elimina un vídeo compartido, se elimina de la cuenta del afiliado, pero permanece en la cuenta principal y en todas las demás cuentas de afiliados.</li>
+      <li>Los afiliados no pueden eliminar o actualizar pistas de texto.</li>
+      <li>Cuando los afiliados reciben un video compartiendo, se encuentra en el estado activo. Esto es cierto incluso si el video no estaba activo en la cuenta maestra.</li>
+      <li>Si un afiliado acepta un vídeo y faltan campos obligatorios, el vídeo estará inactivo.</li>
+      <li>Una cuenta de afiliado que recibe un vídeo compartido no puede compartirlo con otra cuenta. Solo la cuenta maestra puede compartir el vídeo.</li>
+      <li>Cada cuenta factura de forma independiente las reproducciones (reproducciones del vídeo y utilización del ancho de banda) de un vídeo compartido desde esa cuenta.</li>
+      <li>Los informes sobre un vídeo compartido son específicos de cada cuenta y no añaden información de cada copia del vídeo de cada cuenta.</li>
+    </ul>
+  </section>
+</article>
+
+<!-- complete bootstrap layout -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Contenido de la página</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<div class="last-updated">
+  Última actualización de la página el 03 feb 2020
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+
+        <h2>Asistencia técnica de Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            Estado del sistema<a href="https://status.brightcove.com"></a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contactar soporte</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">Documentación</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>Formación</h2>
+
+        <ul class="menu">
+          <li>
+            Cursos en línea<a href="https://studio.support.brightcove.com/training/online-training-courses.html"></a>
+          </li>
+          <li>
+            Inscríbete a un curso<a href="https://studio.support.brightcove.com/training/register-training.html"></a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">Universidad de Brightcove</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">BrightCove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contáctanos</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
+            </td>
+            <td>Privacidad | Términos y Condiciones<a href="https://www.brightcove.com/en/legal/privacy"></a><a href="https://www.brightcove.com/en/terms-and-conditions"></a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+<div id="talla_wrapper">
+  <p style="text-align: right;position: relative;"><button style="background:rgb(2, 28, 146);color:Snow;padding:.3rem;position:fixed;right:0;bottom:1em;z-index:9999999" onclick="javascript:displayChat()">¿Tiene alguna pregunta? </button> </p>
+  <div id="talla_chat">
+</div>
+</div>
+<script>
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <script src="https://assets.talla.com/latest/embeddedjs/talla.js"></script>
+  <script src="/assets/js/talla-init.js"></script>
+  <style>
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+</body>
+
+</html>
