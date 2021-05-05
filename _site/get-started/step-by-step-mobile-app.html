@@ -1,0 +1,852 @@
+﻿<!doctype html>
+<html lang="es-es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  
+  <title>Paso a paso: Creación y publicación de una experiencia de aplicación móvil</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+  <script src="/assets/js/sajari-head.js"></script>
+</head>
+
+<body class="body">
+
+<header>
+  <div class="div-header">
+    <a href="/"><span class="product-logo" style="font-family:'Balto Web','Public Sans';font-size:2em;font-weight:bold;">BRIGHTCOVE ENGAGE<sup>™</sup></span></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">Seleccionar idioma</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+
+<script>
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+    
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="soporte"/> Contactar con Soporte</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/">Estado<img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="estado del sistema"/> del sistema</a></span> <br/>
+    
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb arr-right">
+      
+      <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+      
+      
+      
+      <li class="breadcrumb-item"><a href="/get-started/">Introducción</a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">Paso a paso: Creación y publicación de una experiencia de aplicación móvil</li>
+    </ol>
+  </nav>
+</header>
+<div class="container">
+    <div class="row">
+            <div class="col-sm-3 left-side-bar">
+        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+          <option value="">Otros documentos de Brightcove</option>
+          
+            
+              <option value="https://support.brightcove.com">Documentación Inicio</option>
+            
+          
+            
+              <option value="https://audience.support.brightcove.com">Audiencia de Brightcove</option>
+            
+          
+            
+              <option value="https://beacon.support.brightcove.com">Baliza Brightcove</option>
+            
+          
+            
+              <option value="https://campaign.support.brightcove.com">Campaña de Brightcove</option>
+            
+          
+            
+              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
+            
+          
+            
+              <option value="https://live.support.brightcove.com">Brightcove Live</option>
+            
+          
+            
+              <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
+            
+          
+            
+              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+            
+          
+            
+              <option value="https://social.support.brightcove.com">Brightcove Social</option>
+            
+          
+            
+              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
+            
+          
+            
+              <option value="https://player.support.brightcove.com">Desarrollo de jugadores de Brightcove</option>
+            
+          
+            
+              <option value="https://apis.support.brightcove.com">API para la plataforma de Video Cloud</option>
+            
+          
+            
+              <option value="https://sdks.support.brightcove.com">SDK de dispositivos de Video Cloud</option>
+            
+          
+            
+              <option value="https://integrations.support.brightcove.com">Integraciones y conectores CMS</option>
+            
+          
+            
+              <option value="https://general.support.brightcove.com">Información general de Video Cloud</option>
+            
+          
+            
+              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
+            
+          
+        </select>
+
+        <nav class="sidenav" id="side_nav">
+          
+            
+            <h5><a href="/index.html">Inicio</a></h5>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/get-started/index.html">Empezar <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/get-started/brightcove-engage-system-requirements.html">Requisitos del sistema Brightcove Engage</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/brightcove-engage-training-videos.html">Vídeos de capacitación de Brightcove Engage</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/overview-create-edit-publish-mobile-app-exp.html">Creación de experiencias de aplicaciones móviles</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/overview-create-edit-publish-web-exp.html">Creación de experiencias web</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/getting-started-brightcove-engage.html">Introducción a Brightcove Engage</a></li>
+                  
+                
+                  
+                    <li><a href="/get-started/getting-started-brightcove-engage-trial.html">Introducción a su prueba de Brightcove Engage</a></li>
+                  
+                
+                  
+                    <li>Paso a paso - Creación de una experiencia de aplicación móvil<a href="/get-started/step-by-step-mobile-app.html"></a></li>
+                  
+                
+                  
+                    <li>Paso a paso - Creación de una experiencia web<a href="/get-started/step-by-step-web-exp.html"></a></li>
+                  
+                
+                  
+                    <li>Uso de la aplicación Brightcove Engage<a href="/get-started/using-brightcove-engage-app.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Gestión de Vídeos +<a href="/videos/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/videos/adding-text-tracks-to-a-video.html">Adición de pistas de texto</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/capturing-poster-and-thumbnail-images.html">Captura de póster y imágenes en miniatura</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/configuring-video-availability.html">Configuración de la disponibilidad de vídeo</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/creating-and-managing-playlists.html">Creación y administración de listas de reproducción</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/editing-video-properties.html">Edición de propiedades de vídeo</a></li>
+                  
+                
+                  
+                    <li><a href="/videos/editing-video-properties-using-quick-edit.html">Edición de propiedades de vídeo con edición rápida</a></li>
+                  
+                
+                  
+                    <li>Exportar datos de vídeo<a href="/videos/exporting-video-data.html"></a></li>
+                  
+                
+                  
+                    <li>Gestión de Vídeos<a href="/videos/managing-videos.html"></a></li>
+                  
+                
+                  
+                    <li>Búsqueda de vídeos<a href="/videos/how-to-search-for-videos.html"></a></li>
+                  
+                
+                  
+                    <li>Cargar imágenes de póster y miniatura<a href="/videos/uploading-poster-and-thumbnail-images.html"></a></li>
+                  
+                
+                  
+                    <li>Subir vídeos<a href="/videos/uploading-videos.html"></a></li>
+                  
+                
+                  
+                    <li>Trabajar con vídeos compartidos<a href="/videos/working-with-shared-videos.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/experiences/index.html">Creación de experiencias <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/experiences/adding-logo-mobile-app-experience.html">Agregar un logotipo a las páginas de experiencia de aplicaciones móviles</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/adding-objects-web-experience-pages.html">Adición de imágenes, texto y vínculos a páginas de experiencia web</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/adding-videos-experience.html">Adición de vídeos a una experiencia</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/assigning-custom-domain-web-experience.html">Asignación de un dominio personalizado a una experiencia Web</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/configuring-custom-domains-and-ssl.html">Configuración de dominios personalizados y SSL</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/configuring-experience-settings.html">Configuración de la experiencia</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/configuring-single-sign-active-directory-federation-services.html">Configuración de inicio de sesión único con ADFS</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/controlling-access-experience.html">Control del acceso a una experiencia</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/creating-access-control-profiles.html">Creación de perfiles de control de acceso</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/creating-and-managing-push-notifications.html">Creación de notificaciones push</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/creating-and-managing-experiences.html">Creación y gestión de experiencias</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/using-experience-editor-customize-mobile-app-experience.html">Personalización de experiencias de aplicaciones móviles</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/using-experience-editor-customize-web-experience.html">Personalización de experiencias web</a></li>
+                  
+                
+                  
+                    <li><a href="/experiences/editing-experience-details.html">Detalles de la experiencia de edición</a></li>
+                  
+                
+                  
+                    <li>Administrar colecciones<a href="/experiences/managing-collections.html"></a></li>
+                  
+                
+                  
+                    <li>Gestión de Proyectos<a href="/experiences/managing-projects.html"></a></li>
+                  
+                
+                  
+                    <li>Descripción general de las plantillas de experiencia<a href="/experiences/overview-experience-templates.html"></a></li>
+                  
+                
+                  
+                    <li>Vista previa y publicación de experiencias de aplicaciones móviles<a href="/experiences/previewing-publishing-mobile-app-experience.html"></a></li>
+                  
+                
+                  
+                    <li>Vista previa y publicación de experiencias web<a href="/experiences/previewing-publishing-web-experience.html"></a></li>
+                  
+                
+                  
+                    <li>Proteger una experiencia web con SSL<a href="/experiences/securing-web-experience-ssl.html"></a></li>
+                  
+                
+                  
+                    <li>Protección de experiencias con Auth0<a href="/experiences/securing-experiences-auth0.html"></a></li>
+                  
+                
+                  
+                    <li>Protección de experiencias con Auth0 sin contraseña<a href="/experiences/securing-experiences-passwordless.html"></a></li>
+                  
+                
+                  
+                    <li>Asegurar experiencias con Okta<a href="/experiences/securing-experiences-okta.html"></a></li>
+                  
+                
+                  
+                    <li>Protección de experiencias con PingOne<a href="/experiences/securing-experiences-pingone.html"></a></li>
+                  
+                
+                  
+                    <li>Diseño de experiencias de aplicaciones móviles<a href="/experiences/styling-mobile-app-experiences.html"></a></li>
+                  
+                
+                  
+                    <li>Estilo de experiencias web<a href="/experiences/styling-web-experiences.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Gestión de eventos en directo +<a href="/live/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/live/creating-and-managing-live-events-using-live-module.html">Creación y administración de eventos en directo</a></li>
+                  
+                
+                  
+                    <li><a href="/live/creating-video-clips.html">Creación de clips de vídeo</a></li>
+                  
+                
+                  
+                    <li>Uso de la sala de control<a href="/live/viewing-live-event-info-control-room.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Revisión de Analytics +<a href="/analytics/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li>Revisión de análisis de vídeo<a href="/analytics/reviewing-video-analytics.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/admin/index.html">Administrar cuentas <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li>Gestión de la información de cuenta<a href="/admin/managing-account-information.html"></a></li>
+                  
+                
+                  
+                    <li>Administrar la configuración de cuenta<a href="/admin/managing-account-settings.html"></a></li>
+                  
+                
+                  
+                    <li>Administrar la configuración de uso compartido de<a href="/admin/managing-media-sharing-settings.html"></a></li>
+                  
+                
+                  
+                    <li>Gestión de la información de perfil<a href="/admin/managing-profile-information.html"></a></li>
+                  
+                
+                  
+                    <li>Administrar usuarios<a href="/admin/managing-users.html"></a></li>
+                  
+                
+                  
+                    <li>Administrar campos de vídeo<a href="/admin/managing-video-fields.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Notas de la versión +<a href="/release-notes/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/release-notes/2020.html">2020</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header">Soporte +<a href="/support/index.html"><strong></strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    
+                  
+                
+                  
+                    <li>Visualización de la página Estado del Sistema de Brightcove<a href="/support/viewing-brightcove-system-status-page.html"></a></li>
+                  
+                
+                  
+                    <li><a href="/support/contact-sales.html">Contacto con Ventas</a></li>
+                  
+                
+                  
+                    <li>Apertura de un caso de soporte<a href="/support/opening-case-with-brightcove-support.html"></a></li>
+                  
+                
+              </ul>
+            
+          
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+  <!-- bootstrap layout -->
+
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menú de navegación"/></p>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">Contenido de la página</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+<!-- open in new tab/window -->
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="abrir en una nueva pestaña" style="margin-top:4em;width: 1.5em;"/></a>
+
+
+
+  
+    
+
+
+<article class="bcls-article">
+  <h1>Paso a paso: Creación y publicación de una experiencia de aplicación móvil</h1>
+  <summary>En este tema se proporciona un conjunto de pasos que puede seguir para crear y publicar una experiencia de aplicación móvil mediante Brightcove Engage™.</summary>
+  <section class="bcls-section">
+    <p>Después de completar este tema, usted debe ser capaz de:</p>
+    <ul>
+      <li>Usar Brightcove Engage para crear una nueva experiencia de aplicación móvil</li>
+      <li>Añadir vídeos a una experiencia</li>
+      <li>Personalizar una experiencia</li>
+      <li>Vista previa y publicación de una experiencia</li>
+      <li>Instale la aplicación Brightcove Engage en un dispositivo y acceda a una experiencia</li>
+    </ul>
+    <aside class="bcls-aside bcls-aside--information language-editable">Nota: Para obtener una guía paso a paso para crear una experiencia Web, consulte <a href="step-by-step-web-exp.html">Paso a paso: Creación y publicación de una experiencia web</a>.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="audience">Audience</h2>
+    <p>Cualquier persona que necesite crear aplicaciones móviles nativas para mostrar contenido de vídeo corporativo.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="prereq">Requisitos</h2>
+    <ul>
+      <li>Acceso a Brightcove Engage (<a href="https://register.brightcove.com">regístrese para una prueba</a>)</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="setup">Antes de comenzar</h2>
+    <p>Esta guía paso a paso utilizará los vídeos que se incluyen con la cuenta de prueba de Brightcove Engage. Siéntase libre de subir y usar sus propios vídeos.<a href="/videos/uploading-videos.html"></a></p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="install">Instalación de la aplicación Brightcove Engage</h2>
+    <p>La aplicación móvil Brightcove Engage es necesaria para ver las experiencias publicadas en aplicaciones móviles. Siga estos pasos para instalar la aplicación. </p>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>Abre&nbsp;<strong>App Store</strong>&nbsp;(iOS) o <strong>Google Play Store</strong>(Android) en tu dispositivo.</li>
+      <li>Busque la aplicación&nbsp;<strong>Brightcove Engage</strong> .</li>
+      <li>Descargue e instale la aplicación en su dispositivo.</li>
+    </ol>
+    <p>La aplicación se usará más adelante para ver la experiencia que crearemos.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="create">Creación de una experiencia de aplicación móvil</h2>
+    <p>Para crear una experiencia de aplicación móvil con Brightcove Engage, completará las siguientes tareas:</p>
+    <ul>
+      <li>Organizar vídeos mediante listas de reproducción<a href="#organize"></a></li>
+      <li><a href="#create">Crear una nueva experiencia</a></li>
+      <li><a href="#details">Editar los detalles del sitio</a></li>
+      <li><a href="#logo">Añadir un logotipo a la página principal</a></li>
+      <li><a href="#addvideos">Crear colecciones y añadir vídeos a las colecciones</a></li>
+      <li>Vista previa de la experiencia<a href="#preview"></a></li>
+      <li><a href="#style">Personalizar el estilo</a></li>
+      <li>Publicar la experiencia<a href="#publish"></a></li>
+      <li><a href="#device">Acceder a la experiencia en un dispositivo</a></li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="organize">Organización de vídeos mediante listas de reproducción</h2>
+    <p>Antes de empezar a crear experiencias, es útil pensar en cómo desea organizar o agrupar los vídeos. Normalmente, querrás agrupar vídeos relacionados. Por ejemplo, es posible que desee agrupar los videos del CEO, los videos de RRHH juntos, videos de marketing, etc. Cuando los espectadores usen tu experiencia de aplicaciones móviles, verán una lista de estos grupos y, a continuación, elegirán los vídeos que quieren ver.</p>
+    <p>Además, al crear una experiencia de aplicación móvil, debe seleccionar un solo vídeo para que sea el «video destacado». Este vídeo se mostrará de forma prominente en la parte superior de la aplicación. Cuando se utiliza Brightcove Engage, los vídeos relacionados se agrupan mediante listas de reproducción.</p>
+    <aside class="bcls-aside bcls-aside--information language-editable">Nota: Si está utilizando sus propios vídeos, cree varias listas de reproducción para organizar los vídeos.<a href="/videos/creating-and-managing-playlists.html"></a></aside>
+    <p>Para organizar los vídeos de muestra en listas de reproducción, siga estos pasos.</p>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>Inicie sesión en Brightcove Engage. Aparecerá la página Proyectos.<strong></strong></li>
+      <li>Haga clic en la ficha <strong>Vídeos</strong> del encabezado de navegación. Aparecerá una lista de los vídeos de muestra.</li>
+      <li>En la navegación de la izquierda, haz clic en <strong>+ Crear lista de reproducción</strong>.</li>
+      <li>Establezca el tipo de lista de reproducción en Manual.<strong></strong><strong></strong></li>
+      <li>Establezca el nombre de la lista de reproducción en.<strong></strong><code translate="No">Featured Video</code></li>
+      <li> <strong>Marque Mostrar lista de reproducción en la barra lateral</strong>.</li>
+      <li>Haga clic en <strong>Guardar</strong>.</li>
+      <li>Usando la misma configuración, cree dos listas de reproducción más y.<code translate="No">Sales Videos</code><code translate="No">HR Videos</code> Deberías tener tres listas de reproducción creadas.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-three-playlists.png"/></figure>
+      </li>
+      <li>En la navegación de la izquierda, haz clic en <strong>Todos los vídeos</strong>.</li>
+      <li>Haga clic en la casilla de verificación situada junto al vídeo <strong>Reunión de todas las manos 2019</strong> y, a continuación, haga clic en <strong>Más &gt; Agregar a la lista de reproducción</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-featured-video-playlist.png"/></figure>
+      </li>
+      <li>Seleccione la lista de reproducción Vídeo destacado y, a continuación, haga clic en Agregar.<strong></strong><strong></strong></li>
+      <li>Seleccione los siguientes vídeos y agréguelos a la lista de reproducción Vídeos de ventas.<strong></strong> </li>
+      <ul>
+        <li>Reunión de estrategia de ventas 2018</li>
+        <li>Cómo Ventas - Desarrollo de su Pipeline en Nuevos Mercados - Ep 02</li>
+        <li>Cómo Ventas - Nuevas Técnicas para Excursiones Upselling - Ep 01</li>
+      </ul>
+      <li>Seleccione los siguientes vídeos y agréguelos a la lista de reproducción Vídeos de HR.<strong></strong> </li>
+      <ul>
+        <li>Recursos Humanos - Construyendo su Plan de Comunicaciones Internas - E02</li>
+        <li>HR - Incorporación de nuevos empleados - E01</li>
+      </ul>
+    </ol>
+    <p>Todos los vídeos ahora están organizados en listas de reproducción. Al hacer clic en el nombre de una lista de reproducción en la navegación izquierda se mostrarán los vídeos de esa lista de reproducción.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/web-app-sales-videos.png"/></figure>
+    Para obtener más información sobre las listas de reproducción, consulte el tema <a href="/videos/creating-and-managing-playlists.html">Creación y administración de listas de reproducción</a> . </section>
+  <section class="bcls-section">
+    <h2 id="create">Creación de una nueva experiencia</h2>
+    <p>Para crear una nueva experiencia de aplicación móvil, siga estos pasos.</p>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>En el encabezado de navegación, haga clic en la ficha <strong>Proyectos</strong> .</li>
+      <li>Aparecerá la página <strong>Crear experiencia</strong> . Si aparece una lista de experiencias, haga clic en <strong>Nueva experiencia</strong> para mostrar la página <strong>Crear experiencia</strong> .</li>
+      <li>Localice la plantilla de <strong>aplicación móvil </strong> y haga clic en <strong>Elegir</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/choose-mobile-app-template.png"/></figure>
+        <aside class="bcls-aside bcls-aside--information language-editable">Nota: Una vez que seleccione una plantilla, no se puede cambiar. Para obtener más información sobre las plantillas, consulte el tema <a href="/experiences/overview-experience-templates.html">Descripción general de las plantillas de experiencia</a> .</aside>
+      </li>
+      <li>Introduzca la <strong>aplicación móvil de ejemplo</strong> para el <strong>título de la experiencia</strong>. ¿Para la <strong>experiencia Prepoblar?</strong> , seleccione <strong>No gracias</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/new-sample-mobile-app.png"/></figure>
+      </li>
+      <li>Haga clic en <strong>Crear experiencia</strong>.</li>
+    </ol>
+    <p>Se abrirá el Editor de experiencias. El Editor de experiencias se utiliza para personalizar la experiencia y proporciona la capacidad de agregar vídeos, elegir estilos y configurar otros ajustes. Todos los ajustes de personalización se accede a través del menú de navegación de la izquierda.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/mobile-app-left-nav.png"/></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="details">Edición de los detalles del sitio</h2>
+    <p>El título de la experiencia, la descripción y la configuración de idioma se pueden editar con el Editor de experiencias.</p>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>Haga clic en <strong>VISIÓN GENERAL </strong>en la navegación de la izquierda.</li>
+      <li>Para la <strong>descripción de la experiencia</strong>, agregue <strong>Ejemplo de experiencia de aplicación móvil</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/mobile-app-edit-details.png"/></figure>
+      </li>
+      <li>Haga clic en <strong>Guardar</strong>.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="logo">Agregar un logotipo a la página principal</h2>
+    <p>Cada experiencia se compone de un conjunto de plantillas de página. Las plantillas de página que se proporcionan dependen de la plantilla que se seleccionó cuando se creó la experiencia por primera vez. La plantilla Aplicación móvil proporciona plantillas de página de <strong>inicio</strong>, <strong>colecciones</strong>, <strong>detalles de vídeo</strong>, <strong>búsqueda</strong> y <strong>perfil</strong>.  Estas páginas se pueden ver en el margen izquierdo como parte del menú PÁGINAS.<strong></strong></p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/mobile-app-page-templates.png"/></figure>
+    <p>La plantilla Aplicación móvil proporciona la posibilidad de agregar un logotipo a la página de inicio. Para obtener información sobre cómo agregar un logotipo, consulte <a href="/experiences/adding-logo-mobile-app-experience.html">Agregar un logotipo a una experiencia de aplicación móvil</a>.</p>
+    <p>Para agregar un logotipo a la página principal, siga estos pasos.</p>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>Haga clic en <strong>PAGES &gt; Inicio</strong> en la navegación izquierda.</li>
+      <li>Haga clic en el enlace <strong>Agregar logotipo</strong> en la vista previa de la experiencia.</li>
+      <li>Haga clic en <strong>Examinar</strong> y, a continuación, busque y seleccione una imagen para usarla en el encabezado.
+        <aside class="bcls-aside bcls-aside--information language-editable">Nota: Brightcove redimensionará la imagen a 65 x 30 px.</aside>
+        <aside class="bcls-aside bcls-aside--information language-editable">Nota: Brightcove recomienda usar imágenes de &lt; 20 KB de tamaño.</aside>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/mobile-app-add-logo.png"/></figure>
+      </li>
+      <li>Haga clic en <strong>Guardar</strong>.</li>
+      <li>Compruebe que la imagen aparece en la vista previa de la experiencia.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/mobile-app-logo-preview.png"/></figure>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="addvideos">Crear colecciones y añadir vídeos</h2>
+    <p>Con el Editor de experiencias, puede seleccionar los vídeos que desea mostrar en la experiencia. Al crear experiencias, los vídeos se organizan en colecciones. Al crear experiencias de aplicaciones móviles, el primer vídeo de la primera colección se utiliza como vídeo destacado. El vídeo destacado aparece en la parte superior de la aplicación.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/add-videos-featured-video.png"/></figure>
+    <p>Al crear colecciones para Experiencias de aplicaciones móviles, Brightcove recomienda crear una colección de vídeos destacados como primera colección.<strong></strong> A continuación, asignaremos la lista de reproducción de Vídeos destacados que creamos anteriormente a esa colección. </p>
+    <p>Para obtener más información sobre cómo crear colecciones y agregar vídeos a una experiencia, consulte <a href="/experiences/adding-videos-experience.html">Agregar vídeos a una experiencia</a>.</p>
+    <p>Para agregar vídeos a la experiencia, siga estos pasos.</p>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>Haga clic en <strong>VIDEOS</strong> en la navegación izquierda.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/mobile-app-collections-empty.png"/></figure>
+      </li>
+      <li>Asigne un nombre a la primera colección <strong>Vídeo destacado</strong> y, a continuación, pulse <strong>enter</strong></li>
+      <li>Haga clic en el nombre de la colección para abrir el editor de colecciones.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/mobile-app-featured-video.png"/></figure>
+      </li>
+      <li>Seleccione Lista de reproducción para los criterios.<strong></strong></li>
+      <li>Haga clic en la lista <strong>de reproducción Vídeo destacado</strong> . El vídeo de esa lista de reproducción aparecerá en la lista de vídeos. Haga clic en <strong>Guardar</strong>.
+        <aside class="bcls-aside bcls-aside--information language-editable">Nota: La lista de reproducción <strong>Vídeo destacado</strong> se creó en la sección <a href="#organize">Organizar vídeos mediante listas de reproducción</a> .</aside>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/select-featured-video.png"/></figure>
+        <aside class="bcls-aside bcls-aside--information language-editable">Nota: Cuando se utiliza una asignación de vídeo de lista de reproducción, el orden de los vídeos se basa en los ajustes de la lista de reproducción que se establecieron en la página Vídeos.<strong></strong></aside>
+      </li>
+      <li>Cree otra colección denominada <strong>Ventas</strong> utilizando la lista de reproducción <strong>Vídeos de ventas</strong> como criterio.</li>
+      <li>Cree otra colección denominada <strong>HR</strong> utilizando la lista de reproducción <strong>HR Videos</strong> como criterio.
+        <figure class="bcls-figure"></figure>
+      </li>
+      <li>Confirme que se han creado 3 colecciones.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/mobile-app-all-collections.png"/></figure>
+        <aside class="bcls-aside bcls-aside--information language-editable">Nota: Puede cambiar el orden de las colecciones haciendo clic en la colección y arrastrándola a una nueva posición.</aside>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="preview">Vista previa de la experiencia</h2>
+    <p>La vista previa de una experiencia de aplicación móvil te permite ver cómo aparecerá en los dispositivos móviles. Una vista previa rápida se puede hacer haciendo clic en las plantillas de página que aparecen debajo del elemento de navegación <strong>PAGES</strong> . Tenga en cuenta que al utilizar esta opción de vista previa, los vídeos no se reproducirán, pero puede obtener una vista del diseño.</p>
+    <p>La experiencia también se puede previsualizar en una nueva pestaña del navegador o se puede generar un enlace compartible para que otros puedan previsualizar. Para obtener más información sobre la vista previa y la publicación de una experiencia de aplicación móvil, consulte <a href="/experiences/previewing-publishing-mobile-app-experience.html">Vista previa y publicación de una experiencia de aplicación móvil</a>.</p>
+    <p>Para obtener una vista previa de la experiencia, siga estos pasos.</p>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>Mientras edita el sitio con el Editor de experiencias, haga clic en <strong>Vista previa</strong> y, a continuación, haga clic en <strong>Vista previa sensible</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/responsive-preview.png"/></figure>
+      </li>
+      <li>La vista previa se abrirá en una nueva pestaña del navegador.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/mobile-app-preview.png"/></figure>
+      </li>
+      <li>Cierre la ficha Vista previa del sitio.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="style">Personalización del estilo</h2>
+    <p>La configuración de Estilo se puede utilizar para personalizar los colores que se utilizan en la experiencia. Para obtener más información sobre cómo cambiar el estilo de Experiencias de aplicaciones móviles, consulte <a href="/experiences/styling-mobile-app-experiences.html">Estilo de experiencias de aplicaciones móviles</a>.</p>
+    <p>Para cambiar el estilo, siga estos pasos.</p>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>Haga clic en <strong> ESTILO </strong> en la navegación izquierda.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/mobile-app-style.png"/></figure>
+      </li>
+      <li>Un <strong>tema</strong> es un conjunto de colores que se pueden aplicar a una plantilla. Seleccione el tema <strong>Luz</strong> .</li>
+      <li>Para cambiar un color, haga clic en el círculo de color asociado.</li>
+      <li>Utilice el control deslizante debajo del cuadrado de color para seleccionar una gama de colores.</li>
+      <li>Haga clic en el cuadro para seleccionar el tono de color deseado. El color también se puede establecer introduciendo el código hexadecimal apropiado, el valor RGB o el valor HSV (matiz, saturación, luminosidad) en el control de texto.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/mobile-app-select-color.png"/></figure>
+      </li>
+      <li>Haga clic en el vínculo <strong>&lt; Volver a la experiencia</strong> en la parte superior del menú de estilo.</li>
+    </ol>
+    <p>Para restablecer el color de nuevo a su valor original, haga clic en la flecha izquierda situada junto al círculo de color.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="publish">Publicar la experiencia</h2>
+    <p>Las experiencias de aplicaciones móviles deben publicarse antes de poder acceder a ellas desde dispositivos móviles. Para obtener información sobre cómo previsualizar y publicar una experiencia de aplicación móvil, consulte <a href="/experiences/previewing-publishing-mobile-app-experience.html">Vista previa y publicación de una experiencia de aplicación móvil</a>.</p>
+    <p>Para publicar la experiencia, siga estos pasos.</p>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>En el Editor de experiencias, haga clic en <strong>Publicar</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/mobile-app-publish.png"/></figure>
+      </li>
+      <li>En el cuadro de diálogo Publicar esta aplicación móvil, haga clic en <strong>Publicar ahora</strong> para confirmar la publicación.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/mobile-app-publish-done.png"/></figure>
+      </li>
+    </ol>
+    <p>La clave de acceso será necesaria para acceder a la experiencia en dispositivos móviles.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="device">Acceder a la experiencia en un dispositivo</h2>
+    <p>Una vez publicada la experiencia de aplicaciones móviles, se necesita la clave de acceso para acceder a la experiencia en un dispositivo móvil.</p>
+    <p>Para acceder a la experiencia en un dispositivo móvil, siga estos pasos.</p>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>Si no tiene la clave de acceso, la clave de acceso se muestra como parte de las propiedades de experiencia en la página principal de <strong>Proyectos</strong> . Haga clic en la experiencia para seleccionarla. La clave de acceso se mostrará en la sección de propiedades.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/mobile-app-access-key.png"/></figure>
+      </li>
+      <li>Abre la aplicación Brightcove Engage en tu dispositivo. Escriba la <strong>clave de acceso</strong> y, a continuación, haga clic en <strong>Siguiente</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/mobile-app-on-device.png"/></figure>
+      </li>
+    </ol>
+  </section>
+</article>
+
+<!-- complete bootstrap layout -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Contenido de la página</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<footer class="bcls-footer" role="contentinfo">  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+
+        <h2>Asistencia técnica de Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            Estado del sistema<a href="https://status.brightcove.com"></a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contactar soporte</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">Documentación</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>Formación</h2>
+
+        <ul class="menu">
+          <li>
+            Cursos en línea<a href="https://studio.support.brightcove.com/training/online-training-courses.html"></a>
+          </li>
+          <li>
+            Inscríbete a un curso<a href="https://studio.support.brightcove.com/training/register-training.html"></a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">Universidad de Brightcove</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">BrightCove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contáctanos</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
+            </td>
+            <td>Privacidad | Términos y Condiciones<a href="https://www.brightcove.com/en/legal/privacy"></a><a href="https://www.brightcove.com/en/terms-and-conditions"></a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <style>
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+</body>
+
+</html>
