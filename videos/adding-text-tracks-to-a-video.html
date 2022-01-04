@@ -1,474 +1,13 @@
-﻿<!doctype html>
-<html lang="es-es">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  
-  <title>Adición de pistas de texto a un vídeo</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">  
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
-  <link rel="stylesheet" href="/assets/css/local.css">
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
-  <script src="/assets/js/sajari-head.js"></script>
-</head>
-
-<body class="body">
-
-<header>
-  <div class="div-header">
-    <a href="/"><span class="product-logo" style="font-family:'Balto Web','Public Sans';font-size:2em;font-weight:bold;">BRIGHTCOVE ENGAGE<sup>™</sup></span></a>
-<!-- GTranslate: https://gtranslate.io/ -->
-<select onchange="doGTranslate(this);"><option value="">Seleccionar idioma</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
-
-<script>
-/* <![CDATA[ */
-function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
-/* ]]> */
-</script>
-
-    
-
-
-    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="soporte"/> Contactar con Soporte</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/">Estado<img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="estado del sistema"/> del sistema</a></span> <br/>
-    
-  </div>
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb arr-right">
-      
-      <li class="breadcrumb-item"><a href="/">Inicio</a></li>
-      
-      
-      
-      <li class="breadcrumb-item">Gestión de Vídeos<a href="/videos/"></a></li>
-      
-      <li class="breadcrumb-item active" aria-current="page">Adición de pistas de texto a un vídeo</li>
-    </ol>
-  </nav>
-</header>
-<div class="container">
-    <div class="row">
-            <div class="col-sm-3 left-side-bar">
-        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-          <option value="">Otros documentos de Brightcove</option>
-          
-            
-              <option value="https://support.brightcove.com">Documentación Inicio</option>
-            
-          
-            
-              <option value="https://audience.support.brightcove.com">Audiencia de Brightcove</option>
-            
-          
-            
-              <option value="https://beacon.support.brightcove.com">Baliza Brightcove</option>
-            
-          
-            
-              <option value="https://campaign.support.brightcove.com">Campaña de Brightcove</option>
-            
-          
-            
-              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
-            
-          
-            
-              <option value="https://live.support.brightcove.com">Brightcove Live</option>
-            
-          
-            
-              <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
-            
-          
-            
-              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-            
-          
-            
-              <option value="https://social.support.brightcove.com">Brightcove Social</option>
-            
-          
-            
-              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
-            
-          
-            
-              <option value="https://player.support.brightcove.com">Desarrollo de jugadores de Brightcove</option>
-            
-          
-            
-              <option value="https://apis.support.brightcove.com">API para la plataforma de Video Cloud</option>
-            
-          
-            
-              <option value="https://sdks.support.brightcove.com">SDK de dispositivos de Video Cloud</option>
-            
-          
-            
-              <option value="https://integrations.support.brightcove.com">Integraciones y conectores CMS</option>
-            
-          
-            
-              <option value="https://general.support.brightcove.com">Información general de Video Cloud</option>
-            
-          
-            
-              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
-            
-          
-        </select>
-
-        <nav class="sidenav" id="side_nav">
-          
-            
-            <h5><a href="/index.html">Inicio</a></h5>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/get-started/index.html">Empezar <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/get-started/brightcove-engage-system-requirements.html">Requisitos del sistema Brightcove Engage</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/brightcove-engage-training-videos.html">Vídeos de capacitación de Brightcove Engage</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/overview-create-edit-publish-mobile-app-exp.html">Creación de experiencias de aplicaciones móviles</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/overview-create-edit-publish-web-exp.html">Creación de experiencias web</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/getting-started-brightcove-engage.html">Introducción a Brightcove Engage</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/getting-started-brightcove-engage-trial.html">Introducción a su prueba de Brightcove Engage</a></li>
-                  
-                
-                  
-                    <li>Paso a paso - Creación de una experiencia de aplicación móvil<a href="/get-started/step-by-step-mobile-app.html"></a></li>
-                  
-                
-                  
-                    <li>Paso a paso - Creación de una experiencia web<a href="/get-started/step-by-step-web-exp.html"></a></li>
-                  
-                
-                  
-                    <li>Uso de la aplicación Brightcove Engage<a href="/get-started/using-brightcove-engage-app.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Gestión de Vídeos +<a href="/videos/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/videos/adding-text-tracks-to-a-video.html">Adición de pistas de texto</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/capturing-poster-and-thumbnail-images.html">Captura de póster y imágenes en miniatura</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/configuring-video-availability.html">Configuración de la disponibilidad de vídeo</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/creating-and-managing-playlists.html">Creación y administración de listas de reproducción</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/editing-video-properties.html">Edición de propiedades de vídeo</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/editing-video-properties-using-quick-edit.html">Edición de propiedades de vídeo con edición rápida</a></li>
-                  
-                
-                  
-                    <li>Exportar datos de vídeo<a href="/videos/exporting-video-data.html"></a></li>
-                  
-                
-                  
-                    <li>Gestión de Vídeos<a href="/videos/managing-videos.html"></a></li>
-                  
-                
-                  
-                    <li>Búsqueda de vídeos<a href="/videos/how-to-search-for-videos.html"></a></li>
-                  
-                
-                  
-                    <li>Cargar imágenes de póster y miniatura<a href="/videos/uploading-poster-and-thumbnail-images.html"></a></li>
-                  
-                
-                  
-                    <li>Subir vídeos<a href="/videos/uploading-videos.html"></a></li>
-                  
-                
-                  
-                    <li>Trabajar con vídeos compartidos<a href="/videos/working-with-shared-videos.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/experiences/index.html">Creación de experiencias <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/experiences/adding-logo-mobile-app-experience.html">Agregar un logotipo a las páginas de experiencia de aplicaciones móviles</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/adding-objects-web-experience-pages.html">Adición de imágenes, texto y vínculos a páginas de experiencia web</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/adding-videos-experience.html">Adición de vídeos a una experiencia</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/assigning-custom-domain-web-experience.html">Asignación de un dominio personalizado a una experiencia Web</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/configuring-custom-domains-and-ssl.html">Configuración de dominios personalizados y SSL</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/configuring-experience-settings.html">Configuración de la experiencia</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/configuring-single-sign-active-directory-federation-services.html">Configuración de inicio de sesión único con ADFS</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/controlling-access-experience.html">Control del acceso a una experiencia</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/creating-access-control-profiles.html">Creación de perfiles de control de acceso</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/creating-and-managing-push-notifications.html">Creación de notificaciones push</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/creating-and-managing-experiences.html">Creación y gestión de experiencias</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/using-experience-editor-customize-mobile-app-experience.html">Personalización de experiencias de aplicaciones móviles</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/using-experience-editor-customize-web-experience.html">Personalización de experiencias web</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/editing-experience-details.html">Detalles de la experiencia de edición</a></li>
-                  
-                
-                  
-                    <li>Administrar colecciones<a href="/experiences/managing-collections.html"></a></li>
-                  
-                
-                  
-                    <li>Gestión de Proyectos<a href="/experiences/managing-projects.html"></a></li>
-                  
-                
-                  
-                    <li>Descripción general de las plantillas de experiencia<a href="/experiences/overview-experience-templates.html"></a></li>
-                  
-                
-                  
-                    <li>Vista previa y publicación de experiencias de aplicaciones móviles<a href="/experiences/previewing-publishing-mobile-app-experience.html"></a></li>
-                  
-                
-                  
-                    <li>Vista previa y publicación de experiencias web<a href="/experiences/previewing-publishing-web-experience.html"></a></li>
-                  
-                
-                  
-                    <li>Proteger una experiencia web con SSL<a href="/experiences/securing-web-experience-ssl.html"></a></li>
-                  
-                
-                  
-                    <li>Protección de experiencias con Auth0<a href="/experiences/securing-experiences-auth0.html"></a></li>
-                  
-                
-                  
-                    <li>Protección de experiencias con Auth0 sin contraseña<a href="/experiences/securing-experiences-passwordless.html"></a></li>
-                  
-                
-                  
-                    <li>Asegurar experiencias con Okta<a href="/experiences/securing-experiences-okta.html"></a></li>
-                  
-                
-                  
-                    <li>Protección de experiencias con PingOne<a href="/experiences/securing-experiences-pingone.html"></a></li>
-                  
-                
-                  
-                    <li>Diseño de experiencias de aplicaciones móviles<a href="/experiences/styling-mobile-app-experiences.html"></a></li>
-                  
-                
-                  
-                    <li>Estilo de experiencias web<a href="/experiences/styling-web-experiences.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Gestión de eventos en directo +<a href="/live/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/live/creating-and-managing-live-events-using-live-module.html">Creación y administración de eventos en directo</a></li>
-                  
-                
-                  
-                    <li><a href="/live/creating-video-clips.html">Creación de clips de vídeo</a></li>
-                  
-                
-                  
-                    <li>Uso de la sala de control<a href="/live/viewing-live-event-info-control-room.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Revisión de Analytics +<a href="/analytics/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li>Revisión de análisis de vídeo<a href="/analytics/reviewing-video-analytics.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/admin/index.html">Administrar cuentas <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li>Gestión de la información de cuenta<a href="/admin/managing-account-information.html"></a></li>
-                  
-                
-                  
-                    <li>Administrar la configuración de cuenta<a href="/admin/managing-account-settings.html"></a></li>
-                  
-                
-                  
-                    <li>Administrar la configuración de uso compartido de<a href="/admin/managing-media-sharing-settings.html"></a></li>
-                  
-                
-                  
-                    <li>Gestión de la información de perfil<a href="/admin/managing-profile-information.html"></a></li>
-                  
-                
-                  
-                    <li>Administrar usuarios<a href="/admin/managing-users.html"></a></li>
-                  
-                
-                  
-                    <li>Administrar campos de vídeo<a href="/admin/managing-video-fields.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Notas de la versión +<a href="/release-notes/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/release-notes/2020.html">2020</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Soporte +<a href="/support/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    
-                  
-                
-                  
-                    <li>Visualización de la página Estado del Sistema de Brightcove<a href="/support/viewing-brightcove-system-status-page.html"></a></li>
-                  
-                
-                  
-                    <li><a href="/support/contact-sales.html">Contacto con Ventas</a></li>
-                  
-                
-                  
-                    <li>Apertura de un caso de soporte<a href="/support/opening-case-with-brightcove-support.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-      </nav>
-    </div>
-    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
-  <!-- bootstrap layout -->
-
-<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menú de navegación"/></p>
-
-<!-- search bar -->
-<div id="nav-search-box" style="margin-top: 1rem;"></div>
-<!-- in-page navigation for narrow screens -->
-<details class="centered-inpage-nav" id="centered_inpage_nav">
-  <summary><h6 class="toc">Contenido de la página</h6></summary>
-  <nav id="centered_toc"></nav>
-  <ul id="centered_in_page_toc" class="list-none"></ul>
-</details>
-<!-- open in new tab/window -->
-<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="abrir en una nueva pestaña" style="margin-top:4em;width: 1.5em;"/></a>
-
-
-
-  
-    
-
+---
+title: Agregar pistas de texto a un video
+parent: Managing Videos
+---
 
 <article class="bcls-article">
   <h1>Adición de pistas de texto a un vídeo</h1>
-  <summary>En este tema aprenderá a agregar pistas de texto a un vídeo.</summary>
+  <summary>En este tema, aprenderá a agregar pistas de texto a un video.</summary>
   <section class="bcls-section">
-    <p>Las propiedades de las pistas de texto se pueden configurar para proporcionar subtítulos para un vídeo. Los subtítulos proporcionan información adicional o interpretativa a las personas que deseen acceder a ella. Con los subtítulos, las personas sordas o con dificultades auditivas pueden enterarse del contenido sonoro de las presentaciones en vídeo. Para mostrar los subtítulos de un vídeo, debe completar las siguientes tareas:</p>
+    <p>Las propiedades de las pistas de texto se pueden configurar para proporcionar subtítulos para un vídeo. Los subtítulos proporcionan información adicional o interpretativa a las personas que desean acceder a ella. Los subtítulos son necesarios para que los sordos y con problemas de audición puedan acceder a la parte de audio de las presentaciones de vídeo. Para mostrar los subtítulos de un vídeo, debe completar las siguientes tareas:</p>
     <ul>
       <li><a href="#captionsfile">Crear archivos de subtítulos</a></li>
       <li><a href="#texttrack">Configurar las propiedades de la pista de texto</a></li>
@@ -476,76 +15,55 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
   <section class="bcls-section">
     <h2 id="captionsfile">Creación de archivos de subtítulos</h2>
-    <p>Para añadir subtítulos a un vídeo, primero debe crear un archivo de subtítulos. Se admiten formatos de formato de pistas de texto de vídeo web (WebVTT), SRT y DFXP. El formato de archivo WebVTT (que se muestra a continuación) es texto sin formato y contiene datos de texto de tiempo seguidos del texto de subtítulos o subtítulos deseados.</p>
+    <p>Para añadir subtítulos a un vídeo, primero debe crear un archivo de subtítulos. Se admiten los formatos de pistas de texto de vídeo web (WebVTT), SRT y DFXP. El formato de archivo WebVTT (que se muestra a continuación) es texto sin formato y contiene datos de texto temporal seguidos del subtítulo o el texto de subtítulos deseados.</p>
     <pre>
-WEBVTT
-00:00:00 .000 — &gt; 00:00:07 .080 align:línea media: 90%
-
-00:00:07 .080 — &gt; 00:00:10 .280 alineación:línea media: 84%
-Hola, soy Bob Bailey, un Aprendizaje
-Especialista en Brightcove.
-
-00:00:10 .280 — &gt; 00:00:12 .780 alineación:línea media: 84%
-En este vídeo, aprenderás
-acerca de cómo es Brightcove Engage
-
-00:00:12 .780 — &gt; 00:00:14 .940 alineación:línea media: 84%
-organizados y obtén una
-breve resumen de lo que
-
-00:00:14 .940 — &gt; 00:00:17 .490 align:línea media: 90%
-puede lograr usarlo.
+WEBVTT 00:00:00 .000 —&gt; 00:00:07 .080 align:middle line: 90% 00:00:07 .080 —&gt; 00:00:10 .280 align:middle line: 84% Hola, soy Bob Bailey, especialista en aprendizaje de Brightcove. 00: 00: 10.280 -&gt; 00: 00: 12.780 align: middle line: 84% En este video, aprenderá cómo es Brightcove Engage 00: 00: 12.780 -&gt; 00: 00: 14.940 align: middle line: 84% organizado y obtenga una breve descripción de lo que 00: 00: 14.940 -&gt; 00: 00: 17.490 align: middle line: 90% que puedes lograr usándolo.
 </pre>
-    <aside class="bcls-aside bcls-aside--information language-editable">Nota: Los nombres de los archivos de leyenda sólo deben incluir letras (mayúsculas o minúsculas), números, guiones (-) y guiones bajos (_).</aside>
-    <p>Para obtener más información sobre el formato WebVTT, consulte <a href="http://dev.w3.org/html5/webvtt/">este vínculo</a>. Debe tener un archivo de subtítulos separado para cada idioma que necesite admitir. Aunque existen muchas herramientas de terceros que ayudan a crear archivos de subtítulos, Brightcove cuenta con varios socios que proporcionan servicios de transcripción, subtítulos y traducción. Para obtener una lista completa de los socios de Brightcove, visite la sección <a href="http://www.brightcove.com/en/partners/find-partner">Partners</a> de nuestro sitio web.</p>
+    <aside class="bcls-aside bcls-aside--information">Nota: Los nombres de los archivos de subtítulos solo deben incluir letras (mayúsculas o minúsculas), números, guiones (-) y guiones bajos (_).</aside>
+    <p>Para obtener más información sobre el formato WebVTT, consulte <a href="http://dev.w3.org/html5/webvtt/">este enlace</a>. Debe tener un archivo de subtítulos independiente para cada idioma que necesite admitir. Aunque existen muchas herramientas de terceros para ayudar a crear archivos de subtítulos, Brightcove tiene varios socios que proporcionan servicios de transcripción, subtítulos y traducción. Para obtener una lista completa de los socios de Brightcove, visite el <a href="http://www.brightcove.com/en/partners/find-partner">Socios</a> sección de nuestro sitio web.</p>
   </section>
   <section class="bcls-section">
     <h2 id="texttrack">Configuración de las propiedades de la pista de texto</h2>
-    <p>Una vez creados los archivos de subtítulos, Brightcove puede cargarlos y alojarlos o residir en una URL accesible a Internet.</p>
-    <p>Para ver y editar las propiedades de la pista de texto de un vídeo, siga estos pasos:</p>
+    <p>Una vez creados los archivos de subtítulos, Brightcove los puede cargar y alojar o residir en una URL accesible a Internet.</p>
+    <p>Para ver y editar las propiedades de la pista de texto de un vídeo, sigue estos pasos:</p>
     <ol class="bcls-tasklist-restart" style="--s:1">
-      <li>Abra la página Vídeos.<strong></strong></li>
+      <li>Abre el <strong>Videos</strong> página.</li>
       <li>Haga clic en el enlace del título del vídeo para abrir la página de propiedades del vídeo.</li>
-      <li>Busque la sección Pistas de texto y haga clic en Editar o haga doble clic en la sección.<strong></strong><strong></strong></li>
-      <li>Seleccione si el archivo de seguimiento de texto se cargará en Brightcove o se alojará en una URL externa.
+      <li>Localizar el <strong>Pistas de texto</strong> sección y haga clic en <strong>Editar</strong> o haga doble clic en la sección.</li>
+      <li>Seleccione si el archivo de la pista de texto se cargará en Brightcove o se alojará en una URL externa.
         <ul>
-          <li><strong>Carga de archivos</strong> : haga clic en <strong>Examinar</strong> y seleccione el archivo de seguimiento de texto del sistema de archivos. El archivo se cargará en Brightcove.</li>
-          <li>Cargar URL: introduzca la URL pública donde reside el archivo de seguimiento de texto y, a continuación, haga clic en Cargar.<strong></strong><strong></strong> El archivo se cargará en Brightcove.</li>
-          <li>URL remota: introduzca la URL pública donde reside el archivo de seguimiento de texto.<strong></strong> La dirección URL debe tener menos de 250 caracteres. Los subtítulos se cargarán desde la URL remota.
-            <aside class="bcls-aside bcls-aside--information language-editable">Nota: Si está alojando archivos de subtítulos en su propio servidor, asegúrese de que el archivo se encuentra en una URL accesible públicamente. El servidor que aloja el archivo de subtítulos también debe tener habilitado el intercambio de recursos de origen cruzado (CORS). </aside>
-            <aside class="bcls-aside bcls-aside--information language-editable">Nota: Los nombres de archivos de seguimiento de texto con paréntesis, signos de interrogación, comillas, espacios y otros caracteres especiales fallarán silenciosamente al cargar. Brightcove recomienda utilizar nombres de archivo sin caracteres especiales.</aside>
-            <aside class="bcls-aside bcls-aside--information language-editable">Nota: La pista de texto de los vídeos compartidos con la cuenta no se puede editar.</aside>
+          <li><strong>Carga de archivos</strong>: haga clic en <strong>Examinar</strong> y seleccione el archivo de seguimiento de texto del sistema de archivos. El archivo se cargará en Brightcove.</li>
+          <li><strong>Carga de URL</strong>: introduzca la URL pública en la que reside el archivo de seguimiento de texto y, a continuación, haga clic en <strong>Cargar</strong>. El archivo se cargará en Brightcove.</li>
+          <li><strong>URL remota</strong>: introduzca la URL pública en la que reside el archivo de seguimiento de texto. La URL debe tener menos de 250 caracteres. Los subtítulos se cargarán desde la URL remota. <aside class="bcls-aside bcls-aside--information">Nota: Si aloja archivos de subtítulos en su propio servidor, asegúrese de que el archivo esté ubicado en una URL de acceso público. El servidor que aloja el archivo de subtítulos también debe tener habilitado el uso compartido de recursos de origen cruzado (CORS). </aside> <aside class="bcls-aside bcls-aside--information">Nota: Los nombres de los archivos de pista de texto con paréntesis, signos de interrogación, comillas, espacios y otros caracteres especiales fallarán silenciosamente al cargar. Brightcove recomienda utilizar nombres de archivo sin caracteres especiales.</aside> <aside class="bcls-aside bcls-aside--information">Nota: No se puede editar la pista de texto de los videos compartidos con la cuenta.</aside>
           </li>
         </ul>
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/videos/text-track-properties.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/videos/text-track-properties.png" /></figure>
       </li>
-      <li>El campo Idioma debe contener el código de idioma de dos letras que especifica el idioma de los datos de texto de pista.<strong></strong><a href="http://www.w3schools.com/tags/ref_language_codes.asp"></a></li>
-      <li>Introduzca la <strong>etiqueta</strong> adecuada para el archivo de leyenda. La etiqueta se muestra dentro del reproductor de vídeo y permite al espectador seleccionar un idioma. Si no se proporciona ninguna etiqueta, se muestra el código de idioma.</li>
-      <li>Seleccione el tipo de pista de texto.<strong></strong> Las opciones incluyen:
+      <li>los <strong>Idioma</strong> El campo debe contener el <a href="http://www.w3schools.com/tags/ref_language_codes.asp">código de idioma de dos letras</a> que especifica el idioma de los datos de texto de la pista.</li>
+      <li>Introduzca la <strong>etiqueta adecuada</strong> para el archivo de subtítulos. La etiqueta se muestra dentro del reproductor de video y permite al espectador seleccionar un idioma. Si no se suministra ninguna etiqueta, se muestra el código de idioma.</li>
+      <li>Seleccione el <strong>tipo</strong> de pista de texto. Las opciones incluyen:
         <ul>
-          <li><strong>Subtítulos</strong> - Similar a los subtítulos, pero también puede incluir efectos de sonido y otra información de audio</li>
-          <li>Subtítulos - Transcripción o traducción del diálogo<strong></strong></li>
-          <li><strong>Descripciones</strong> - Diseñado para ser un archivo de texto independiente que describa el vídeo a través de un lector de pantalla</li>
-          <li><strong>Capítulos</strong> - Destinado a ayudar al usuario a navegar por el vídeo</li>
-          <li>Metadatos - Información y contenido sobre el vídeo que no se pretende mostrar al espectador de forma predeterminada (aunque es posible que desee hacerlo usando JavaScript)<strong></strong></li>
+          <li><strong>Leyendas</strong>: similar a los subtítulos, pero también pueden incluir efectos de sonido y otra información de audio</li>
+          <li><strong>Subtítulos</strong> - La transcripción o traducción del diálogo</li>
+          <li><strong>Descripciones</strong>: diseñado para ser un archivo de texto independiente que describa el vídeo a través de un lector de pantalla</li>
+          <li><strong>Capítulos</strong>: destinados a ayudar al usuario a navegar por el vídeo</li>
+          <li><strong>Metadatos</strong>: información y contenido sobre el vídeo que no se pretende mostrar al espectador de forma predeterminada (aunque tal vez desee hacerlo mediante JavaScript)</li>
         </ul>
       </li>
-      <li>Introduzca el <strong>tipo MIME</strong> para el archivo de pista de texto. Al seleccionar por defecto, se mostrarán los subtítulos cuando se reproduzca el vídeo.<strong></strong>
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/videos/text-track-english.png"/></figure>
+      <li>Introduzca el tipo <strong>MIME</strong> del archivo de pista de texto. Al seleccionar el <strong>valor predeterminado,</strong> se mostrarán los subtítulos cuando se reproduce el vídeo.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/videos/text-track-english.png" /></figure>
       </li>
-      <li>Marque <strong>Predeterminado (Auto Display)</strong> para que la pista sea la predeterminada. La mayoría de los navegadores intentarán mostrar primero la pista de texto predeterminada, pero los ajustes de idioma y accesibilidad pueden anular la configuración predeterminada.
-        <aside class="bcls-aside bcls-aside--information language-editable">Nota: La configuración predeterminada no funciona con IE11.</aside>
+      <li>Active <strong>Predeterminado (Visualización automática)</strong> para que la pista sea la predeterminada. La mayoría de los navegadores intentarán mostrar primero la pista de texto predeterminada, pero la configuración de idioma y accesibilidad puede invalidar la configuración predeterminada. <aside class="bcls-aside bcls-aside--information">Nota: La configuración predeterminada no funciona con IE11.</aside>
       </li>
-      <li>Haga clic en <strong>Agregar pista de texto</strong> para guardar la información de pista de texto.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/videos/text-track-added.png"/></figure>
+      <li>Haga clic en <strong>Agregar pista de texto</strong> para guardar la información de la pista de texto.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/videos/text-track-added.png" /></figure>
       </li>
-      <li>Haga clic en <strong>Agregar pista de texto</strong> para agregar otra pista de texto o en<strong> Guardar</strong> para guardar las pistas de texto.
-        <aside class="bcls-aside bcls-aside--information language-editable">Nota: Los cambios realizados en las propiedades de la pista de texto pueden tardar hasta 15 minutos en aparecer.</aside>
+      <li>Haga clic en <strong>Agregar pista de texto</strong> para añadir otra pista de texto o en<strong> Guardar</strong> para guardar las pistas de texto. <aside class="bcls-aside bcls-aside--information">Nota: Los cambios realizados en las propiedades de la pista de texto pueden tardar hasta 15 minutos en aparecer.</aside>
       </li>
     </ol>
-    <p>Si alguna pista de texto ha sido designada como predeterminada, aparecerán en <strong>negrita</strong>. Para eliminar una pista de texto, haga clic en el icono de eliminación (<img alt="" src="/assets/images/videos/delete-icon.png"/>) situado junto a la pista de texto.</p>
-    <p>Los vídeos con pistas de texto mostrarán un botón CC en el reproductor cromado. Haga clic en el botón <strong>CC</strong> para seleccionar un idioma de subtítulos y mostrar los subtítulos.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/videos/text-track-in-player.png"/></figure>
+    <p>Si se ha designado alguna pista de texto como predeterminada, aparecerán en <strong>negrita</strong>. Para eliminar una pista de texto, haga clic en el icono de eliminación (<img alt="" src="/assets/images/videos/delete-icon.png" />) junto a la pista de texto.</p>
+    <p>Los videos con pistas de texto mostrarán un botón CC en el cromo del reproductor. Haga clic en el <strong>CC</strong> para seleccionar un idioma de subtítulos y mostrar los subtítulos.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/videos/text-track-in-player.png" /></figure>
   </section>
   <section class="bcls-section">
     <h2 id="limitations">Limitaciones</h2>
@@ -554,163 +72,8 @@ puede lograr usarlo.
       <li>iOS 10+</li>
       <li>Android 7+</li>
       <li>Internet Explorer 11+</li>
-      <li>Los navegadores Chrome, Safari y Firefox más recientes en equipos de escritorio</li>
-      <li>No hay límite técnico para la longitud de un título, pero para que el título completo sea visible, el reproductor debe ser lo suficientemente grande como para mostrar esa cantidad de texto.</li>
+      <li>Los navegadores Chrome, Safari y Firefox más recientes en computadoras de escritorio</li>
+      <li>No hay límite técnico en cuanto a la longitud de un subtítulo, pero para que el subtítulo completo esté visible, el reproductor debe ser lo suficientemente grande como para mostrar tanto texto</li>
     </ul>
   </section>
 </article>
-
-<!-- complete bootstrap layout -->
-    </div>
-    <div class="col-sm-2 right-side-bar">
-      
-      <nav class="right-side-nav" id="right_side_nav">
-        <h6 class="toc">Contenido de la página</h6>
-        <ul id="in_page_nav" class="list-none"></ul>
-      </nav>
-      
-    </div>
-  </div>
-</div>
-
-<hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
-    <div class="region region-footer-top-center col-md-12">
-      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
-
-        <h2>Asistencia técnica de Brightcove</h2>
-
-        <ul class="menu">
-          <li>
-            Estado del sistema<a href="https://status.brightcove.com"></a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Contactar soporte</a>
-          </li>
-          <li>
-            <a href="https://support.brightcove.com/">Documentación</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
-
-        <h2>Formación</h2>
-
-        <ul class="menu">
-          <li>
-            Cursos en línea<a href="https://studio.support.brightcove.com/training/online-training-courses.html"></a>
-          </li>
-          <li>
-            Inscríbete a un curso<a href="https://studio.support.brightcove.com/training/register-training.html"></a>
-          </li>
-          <li>
-            <a href="https://university.brightcove.com/">Universidad de Brightcove</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
-
-        <h2>Brightcove</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://www.brightcove.com">BrightCove.com</a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Contáctanos</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-  <div class="row">
-    <div class="region region-footer-bottom-center col-md-12">
-      <div class="bcls-copyright footer-menu">
-        <table>
-          <tr>
-            <td>
-              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
-            </td>
-            <td>Privacidad | Términos y Condiciones<a href="https://www.brightcove.com/en/legal/privacy"></a><a href="https://www.brightcove.com/en/terms-and-conditions"></a></td>
-            <td>
-              <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script>
-      
-  var searchBox = sajari.init({
-    mode: "search-box",
-    project: "1588255093746585379", // Set this to your project.
-    collection: "brightcove-documenation", // Set this to your collection.
-    instantPipeline: "autocomplete", // Pipeline used as you type
-    inputPlaceholder: "Search", // Input element placeholder
-    maxSuggestions: 5, // Maximum number of suggestions to show
-    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
-  });
-  
-    searchBox("sub", "pipeline.search-sent", function (_, query) {
-      window.location = "/search.html?q=" + encodeURIComponent(query.q);
-    });
-  
-
-</script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
-  <script src="/assets/js/sites_nav.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
-  <script src="/assets/js/feedback.js"></script>
-  
-  <script src="/assets/js/sajari-search-foot.js"></script>
-  
-  <!-- <script src="/assets/js/sajari-index.js"></script> -->
-  <style>
-    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
-      background-color: lightblue;
-    }
-    div.sj-tabs__tab {
-      margin-top: 3rem;
-      margin-left: .3rem;
-      border-top-left-radius: .4rem;
-      border-top-right-radius: .4rem;
-      background-color:#e8e8e8;
-    }
-
-    div.sj-tabs__tab.sj-tabs__tab--selected {
-      border-bottom-color: crimson;
-      background-color: #f8f8f8;
-    }
-
-    p.sj-results__result__description.css-p9jvyt {
-      font-size: 1rem;
-    }
-
-    .sj-result__text.css-31l7gp h3 {
-      color: navy;
-      font-size: 1.4rem;
-    }
-    </style>
-
-</body>
-
-</html>

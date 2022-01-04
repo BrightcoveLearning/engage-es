@@ -1,504 +1,43 @@
-﻿<!doctype html>
-<html lang="es-es">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  
-  <title>Creación de clips de vídeo</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">  
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
-  <link rel="stylesheet" href="/assets/css/local.css">
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
-  <script src="/assets/js/sajari-head.js"></script>
-</head>
-
-<body class="body">
-
-<header>
-  <div class="div-header">
-    <a href="/"><span class="product-logo" style="font-family:'Balto Web','Public Sans';font-size:2em;font-weight:bold;">BRIGHTCOVE ENGAGE<sup>™</sup></span></a>
-<!-- GTranslate: https://gtranslate.io/ -->
-<select onchange="doGTranslate(this);"><option value="">Seleccionar idioma</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
-
-<script>
-/* <![CDATA[ */
-function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
-/* ]]> */
-</script>
-
-    
-
-
-    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="soporte"/> Contactar con Soporte</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/">Estado<img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="estado del sistema"/> del sistema</a></span> <br/>
-    
-  </div>
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb arr-right">
-      
-      <li class="breadcrumb-item"><a href="/">Inicio</a></li>
-      
-      
-      
-      <li class="breadcrumb-item">Administración de eventos en directo<a href="/live/"></a></li>
-      
-      <li class="breadcrumb-item active" aria-current="page">Creación de clips de vídeo</li>
-    </ol>
-  </nav>
-</header>
-<div class="container">
-    <div class="row">
-            <div class="col-sm-3 left-side-bar">
-        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-          <option value="">Otros documentos de Brightcove</option>
-          
-            
-              <option value="https://support.brightcove.com">Documentación Inicio</option>
-            
-          
-            
-              <option value="https://audience.support.brightcove.com">Audiencia de Brightcove</option>
-            
-          
-            
-              <option value="https://beacon.support.brightcove.com">Baliza Brightcove</option>
-            
-          
-            
-              <option value="https://campaign.support.brightcove.com">Campaña de Brightcove</option>
-            
-          
-            
-              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
-            
-          
-            
-              <option value="https://live.support.brightcove.com">Brightcove Live</option>
-            
-          
-            
-              <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
-            
-          
-            
-              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-            
-          
-            
-              <option value="https://social.support.brightcove.com">Brightcove Social</option>
-            
-          
-            
-              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
-            
-          
-            
-              <option value="https://player.support.brightcove.com">Desarrollo de jugadores de Brightcove</option>
-            
-          
-            
-              <option value="https://apis.support.brightcove.com">API para la plataforma de Video Cloud</option>
-            
-          
-            
-              <option value="https://sdks.support.brightcove.com">SDK de dispositivos de Video Cloud</option>
-            
-          
-            
-              <option value="https://integrations.support.brightcove.com">Integraciones y conectores CMS</option>
-            
-          
-            
-              <option value="https://general.support.brightcove.com">Información general de Video Cloud</option>
-            
-          
-            
-              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
-            
-          
-        </select>
-
-        <nav class="sidenav" id="side_nav">
-          
-            
-            <h5><a href="/index.html">Inicio</a></h5>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/get-started/index.html">Empezar <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/get-started/brightcove-engage-system-requirements.html">Requisitos del sistema Brightcove Engage</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/brightcove-engage-training-videos.html">Vídeos de capacitación de Brightcove Engage</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/overview-create-edit-publish-mobile-app-exp.html">Creación de experiencias de aplicaciones móviles</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/overview-create-edit-publish-web-exp.html">Creación de experiencias web</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/getting-started-brightcove-engage.html">Introducción a Brightcove Engage</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/getting-started-brightcove-engage-trial.html">Introducción a su prueba de Brightcove Engage</a></li>
-                  
-                
-                  
-                    <li>Paso a paso - Creación de una experiencia de aplicación móvil<a href="/get-started/step-by-step-mobile-app.html"></a></li>
-                  
-                
-                  
-                    <li>Paso a paso - Creación de una experiencia web<a href="/get-started/step-by-step-web-exp.html"></a></li>
-                  
-                
-                  
-                    <li>Uso de la aplicación Brightcove Engage<a href="/get-started/using-brightcove-engage-app.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Gestión de Vídeos +<a href="/videos/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/videos/adding-text-tracks-to-a-video.html">Adición de pistas de texto</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/capturing-poster-and-thumbnail-images.html">Captura de póster y imágenes en miniatura</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/configuring-video-availability.html">Configuración de la disponibilidad de vídeo</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/creating-and-managing-playlists.html">Creación y administración de listas de reproducción</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/editing-video-properties.html">Edición de propiedades de vídeo</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/editing-video-properties-using-quick-edit.html">Edición de propiedades de vídeo con edición rápida</a></li>
-                  
-                
-                  
-                    <li>Exportar datos de vídeo<a href="/videos/exporting-video-data.html"></a></li>
-                  
-                
-                  
-                    <li>Gestión de Vídeos<a href="/videos/managing-videos.html"></a></li>
-                  
-                
-                  
-                    <li>Búsqueda de vídeos<a href="/videos/how-to-search-for-videos.html"></a></li>
-                  
-                
-                  
-                    <li>Cargar imágenes de póster y miniatura<a href="/videos/uploading-poster-and-thumbnail-images.html"></a></li>
-                  
-                
-                  
-                    <li>Subir vídeos<a href="/videos/uploading-videos.html"></a></li>
-                  
-                
-                  
-                    <li>Trabajar con vídeos compartidos<a href="/videos/working-with-shared-videos.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/experiences/index.html">Creación de experiencias <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/experiences/adding-logo-mobile-app-experience.html">Agregar un logotipo a las páginas de experiencia de aplicaciones móviles</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/adding-objects-web-experience-pages.html">Adición de imágenes, texto y vínculos a páginas de experiencia web</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/adding-videos-experience.html">Adición de vídeos a una experiencia</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/assigning-custom-domain-web-experience.html">Asignación de un dominio personalizado a una experiencia Web</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/configuring-custom-domains-and-ssl.html">Configuración de dominios personalizados y SSL</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/configuring-experience-settings.html">Configuración de la experiencia</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/configuring-single-sign-active-directory-federation-services.html">Configuración de inicio de sesión único con ADFS</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/controlling-access-experience.html">Control del acceso a una experiencia</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/creating-access-control-profiles.html">Creación de perfiles de control de acceso</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/creating-and-managing-push-notifications.html">Creación de notificaciones push</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/creating-and-managing-experiences.html">Creación y gestión de experiencias</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/using-experience-editor-customize-mobile-app-experience.html">Personalización de experiencias de aplicaciones móviles</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/using-experience-editor-customize-web-experience.html">Personalización de experiencias web</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/editing-experience-details.html">Detalles de la experiencia de edición</a></li>
-                  
-                
-                  
-                    <li>Administrar colecciones<a href="/experiences/managing-collections.html"></a></li>
-                  
-                
-                  
-                    <li>Gestión de Proyectos<a href="/experiences/managing-projects.html"></a></li>
-                  
-                
-                  
-                    <li>Descripción general de las plantillas de experiencia<a href="/experiences/overview-experience-templates.html"></a></li>
-                  
-                
-                  
-                    <li>Vista previa y publicación de experiencias de aplicaciones móviles<a href="/experiences/previewing-publishing-mobile-app-experience.html"></a></li>
-                  
-                
-                  
-                    <li>Vista previa y publicación de experiencias web<a href="/experiences/previewing-publishing-web-experience.html"></a></li>
-                  
-                
-                  
-                    <li>Proteger una experiencia web con SSL<a href="/experiences/securing-web-experience-ssl.html"></a></li>
-                  
-                
-                  
-                    <li>Protección de experiencias con Auth0<a href="/experiences/securing-experiences-auth0.html"></a></li>
-                  
-                
-                  
-                    <li>Protección de experiencias con Auth0 sin contraseña<a href="/experiences/securing-experiences-passwordless.html"></a></li>
-                  
-                
-                  
-                    <li>Asegurar experiencias con Okta<a href="/experiences/securing-experiences-okta.html"></a></li>
-                  
-                
-                  
-                    <li>Protección de experiencias con PingOne<a href="/experiences/securing-experiences-pingone.html"></a></li>
-                  
-                
-                  
-                    <li>Diseño de experiencias de aplicaciones móviles<a href="/experiences/styling-mobile-app-experiences.html"></a></li>
-                  
-                
-                  
-                    <li>Estilo de experiencias web<a href="/experiences/styling-web-experiences.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Gestión de eventos en directo +<a href="/live/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/live/creating-and-managing-live-events-using-live-module.html">Creación y administración de eventos en directo</a></li>
-                  
-                
-                  
-                    <li><a href="/live/creating-video-clips.html">Creación de clips de vídeo</a></li>
-                  
-                
-                  
-                    <li>Uso de la sala de control<a href="/live/viewing-live-event-info-control-room.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Revisión de Analytics +<a href="/analytics/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li>Revisión de análisis de vídeo<a href="/analytics/reviewing-video-analytics.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/admin/index.html">Administrar cuentas <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li>Gestión de la información de cuenta<a href="/admin/managing-account-information.html"></a></li>
-                  
-                
-                  
-                    <li>Administrar la configuración de cuenta<a href="/admin/managing-account-settings.html"></a></li>
-                  
-                
-                  
-                    <li>Administrar la configuración de uso compartido de<a href="/admin/managing-media-sharing-settings.html"></a></li>
-                  
-                
-                  
-                    <li>Gestión de la información de perfil<a href="/admin/managing-profile-information.html"></a></li>
-                  
-                
-                  
-                    <li>Administrar usuarios<a href="/admin/managing-users.html"></a></li>
-                  
-                
-                  
-                    <li>Administrar campos de vídeo<a href="/admin/managing-video-fields.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Notas de la versión +<a href="/release-notes/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/release-notes/2020.html">2020</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Soporte +<a href="/support/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    
-                  
-                
-                  
-                    <li>Visualización de la página Estado del Sistema de Brightcove<a href="/support/viewing-brightcove-system-status-page.html"></a></li>
-                  
-                
-                  
-                    <li><a href="/support/contact-sales.html">Contacto con Ventas</a></li>
-                  
-                
-                  
-                    <li>Apertura de un caso de soporte<a href="/support/opening-case-with-brightcove-support.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-      </nav>
-    </div>
-    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
-  <!-- bootstrap layout -->
-
-<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menú de navegación"/></p>
-
-<!-- search bar -->
-<div id="nav-search-box" style="margin-top: 1rem;"></div>
-<!-- in-page navigation for narrow screens -->
-<details class="centered-inpage-nav" id="centered_inpage_nav">
-  <summary><h6 class="toc">Contenido de la página</h6></summary>
-  <nav id="centered_toc"></nav>
-  <ul id="centered_in_page_toc" class="list-none"></ul>
-</details>
-<!-- open in new tab/window -->
-<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="abrir en una nueva pestaña" style="margin-top:4em;width: 1.5em;"/></a>
-
-
-
-  
-    
-
+---
+title: Creación de clips de video
+parent: Managing Live Events
+---
 
 <article class="bcls-article">
   <h1>Creación de clips de vídeo</h1>
-  <summary>En este tema aprenderá cómo crear un clip de vídeo a partir de un evento en vivo.</summary>
+  <summary>En este tema, aprenderá a crear un videoclip a partir de un evento en vivo.</summary>
   <section class="bcls-section">
     <h2 id="Overview">Resumen</h2>
-    <p>Brightcove Engage™ ofrece la capacidad de crear clips de vídeo a partir de eventos en directo que están en curso y eventos en directo completados. Hay varias razones por las que puede querer crear un clip:</p>
+    <p>Brightcove Engage&trade; proporciona la capacidad de crear videoclips a partir de eventos en vivo que están en curso y eventos en vivo completados. Hay varias razones por las que puede querer crear un clip:</p>
     <ul>
-      <li>Para crear un clip corto y teaser que se pueda publicar en las redes sociales</li>
-      <li>Para limitar la duración de un vídeo que desea publicar (la mayoría de las plataformas limitan la duración de los vídeos)</li>
-      <li>Usted ha descubierto que los videos más cortos funcionan mejor en las redes sociales</li>
+      <li>Para crear un clip teaser corto que se pueda publicar en las redes sociales</li>
+      <li>Para limitar la duración de un video que desea publicar (la mayoría de las plataformas limitan la duración de los videos)</li>
+      <li>Descubrió que los videos más cortos funcionan mejor en las redes sociales</li>
     </ul>
     <h3>Notas</h3>
     <ul>
-      <li>Los clips solo se pueden crear dentro de los 7 días posteriores al final del evento. Después, se desactivará el botón <strong>Crear clip</strong> .</li>
+      <li>Los clips solo se pueden crear dentro de los 7 días posteriores al final del evento. Posteriormente, el <strong>Crear clip</strong> El botón se desactivará.</li>
       <li>El recorte no es compatible con todos los navegadores.</li>
-      <li>Los clips serán precisos de fotogramas <strong>siempre que el codificador envíe códigos de tiempo SMPTE para la secuencia</strong> ; de lo contrario, serán precisos dentro de un par de fotogramas. Tenga en cuenta que para proporcionar clips lo más rápido posible, primero se crea un clip con precisión de segmentos y se sustituye por un clip con precisión de marco tan pronto como esté disponible.</li>
-      <li>No se pueden crear clips con un tiempo de inicio inferior a 10 segundos en la secuencia.</li>
-      <li>El uso compartido de medios fallará para los vídeos creados al recortar transmisiones en vivo.</li>
-      <li>No se pueden crear clips a partir de transmisiones en vivo cifradas AES.</li>
+      <li>Los clips tendrán una precisión de fotograma <strong>siempre que el codificador envíe códigos de tiempo SMPTE para la transmisión</strong> - de lo contrario, serán precisos en un par de fotogramas. Tenga en cuenta que para proporcionar clips lo más rápido posible, primero se crea un clip con precisión de segmento y se reemplaza por un clip con precisión de fotograma tan pronto como esté disponible.</li>
+      <li>No se pueden crear clips con una hora de inicio de menos de 10 segundos en la transmisión.</li>
+      <li>El uso compartido de medios fallará para los videos creados mediante el recorte de transmisiones en vivo.</li>
+      <li>No se pueden crear clips a partir de transmisiones en vivo cifradas con AES.</li>
     </ul>
   </section>
   <section class="bcls-section">
-    <h2 id="Navigating_the_clip_editor">Navegar por el editor de clips</h2>
-    <p>Para abrir el editor de clips, haga clic en <strong>Live</strong> en el encabezado de navegación, haga clic en el nombre de un evento y, a continuación, haga clic en <strong>Crear clip</strong> en la navegación izquierda. Se abrirá el editor de clips.</p>
-    <p>Tenga en cuenta que todas las horas de la interfaz de recorte se basan en la hora UTC en la que Brightcove recibió los datos de vídeo.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/live/clip-editor-numbered.png"/></figure>
+    <h2 id="Navigating_the_clip_editor">Navegando por el editor de clips</h2>
+    <p>Para abrir el editor de clips, haga clic en <strong>Vivir</strong> en el encabezado de navegación, haga clic en el nombre de un evento y luego haga clic en <strong>Crear clip</strong> en la navegación de la izquierda. Se abrirá el editor de clips.</p>
+    <p>Tenga en cuenta que todas las horas en la interfaz de recorte se basan en la hora UTC en la que Brightcove recibió los datos de video.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/live/clip-editor-numbered.png" /></figure>
     <p>El editor de clips está organizado de la siguiente manera:</p>
     <ul>
-      <li>A - <a href="#preview">Vista previa del jugador</a></li>
+      <li>A - <a href="#preview">Reproductor de vista previa</a></li>
       <li>B - <a href="#playback_control">Botones de control de reproducción</a></li>
       <li>C - <a href="#clip_time">Tiempo de clip</a></li>
       <li>D - <a href="#clipping">Botones de recorte</a></li>
       <li>E - <a href="#preview_clip">Botón de vista previa del clip</a></li>
-      <li>F - <a href="#create">Botón Guardar</a></li>
-      <li>G - <a href="#playhead">Cabeza de reproducción</a></li>
+      <li>F - <a href="#create">Botón guardar</a></li>
+      <li>G - <a href="#playhead">Cabeza lectora</a></li>
       <li>H - <a href="#focus_timeline">Línea de tiempo de enfoque</a></li>
       <li>I - <a href="#context_timeline">Cronología del contexto</a></li>
       <li>J - <a href="#zoom_buttons">Botones de zoom</a></li>
@@ -509,28 +48,28 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="Creating_a_clip">Creación de un clip</h2>
     <p>Siga estos pasos para crear un clip.</p>
     <ol class="bcls-tasklist-restart">
-      <li>Mediante los botones de recorte o las teclas de método abreviado, defina los puntos inicial y final del clip.
-        <figure><img class="bcls-image--no-border" alt="" src="/assets/images/live/clip-portion.png"/></figure>
+      <li>Con los botones de recorte o las teclas de método abreviado, establezca los puntos de inicio y finalización del clip.
+        <figure><img class="bcls-image--no-border" alt="" src="/assets/images/live/clip-portion.png" /></figure>
       </li>
-      <li>Haga clic en <strong>Guardar</strong>.</li>
-      <li>Introduzca las propiedades de vídeo del clip.
+      <li>Haz clic en <strong>Guardar</strong>.</li>
+      <li>Ingrese las propiedades del clip de video.
         <ul>
           <li><strong>Nombre del clip</strong> - Nombre del clip</li>
-          <li>Descripción corta - Descripción del clip<strong></strong></li>
-          <li>Etiquetas - Etiquetas para asociar con el clip<strong></strong></li>
-          <li>Id. de referencia: ID de referencia para asignar al clip<strong></strong>
-            <figure><img class="bcls-image--no-border" alt="" src="/assets/images/live/create-clip.png"/></figure>
+          <li><strong>Breve descripción</strong> - Descripción del clip</li>
+          <li><strong>Etiquetas</strong> - Etiquetas para asociar con el clip</li>
+          <li><strong>Identificación de referencia</strong> - ID de referencia para asignar al clip
+            <figure><img class="bcls-image--no-border" alt="" src="/assets/images/live/create-clip.png" /></figure>
           </li>
         </ul>
-        <p>También se mostrarán todos los campos personalizados requeridos.</p>
+        <p>También se mostrarán todos los campos personalizados obligatorios.</p>
       </li>
-      <li>Haga clic en <strong>Crear clip</strong>. Comenzará el procesamiento del clip.</li>
+      <li>Hacer clic <strong>Crear clip</strong>. Comenzará el procesamiento del clip.</li>
     </ol>
-    <p>Aparecerá una lista de todos los clips debajo del editor de clips. Al hacer clic en el <strong>nombre del clip</strong> , se abrirá el clip en la página Vídeos de otra pestaña del navegador.</p>
+    <p>Aparecerá una lista de todos los clips debajo del editor de clips. Al hacer clic en el nombre del <strong>clip,</strong> se abrirá el clip en la página Vídeos de otra pestaña del navegador.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="Preview_player">Vista previa del reproductor</h2>
-    <p>El reproductor de previsualización se utiliza para previsualizar el clip. Cuando el evento está en curso y se abre el editor de clips, el clip comenzará a reproducirse desde el «punto vivo seguro», que es aproximadamente 3 segmentos antes del final. Tenga en cuenta que no todos los navegadores admiten la reproducción automática.</p>
+    <h2 id="Preview_player">Reproductor de vista previa</h2>
+    <p>El reproductor de vista previa se utiliza para obtener una vista previa del clip. Cuando el evento está en curso y el editor de clips está abierto, el clip comenzará a reproducirse desde el "punto seguro en vivo", que se encuentra aproximadamente 3 segmentos antes del final. Tenga en cuenta que no todos los navegadores admiten la reproducción automática.</p>
   </section>
   <section class="bcls-section">
     <h2 id="Playback_control_buttons">Botones de control de reproducción</h2>
@@ -538,33 +77,33 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th width="107">Button</th>
+          <th width="107">Botón</th>
           <th width="430">Descripción</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td><img alt="" src="/assets/images/live/start-button.png"/></td>
-          <td>Inicia la reproducción de vídeo al principio del vídeo de origen</td>
+          <td><img alt="" src="/assets/images/live/start-button.png" /></td>
+          <td>Inicia la reproducción de video al comienzo del video de origen</td>
         </tr>
         <tr>
-          <td><img alt="" src="/assets/images/live/back15-button.png"/></td>
-          <td>Salta el cabezal de reproducción 15 segundos</td>
+          <td><img alt="" src="/assets/images/live/back15-button.png" /></td>
+          <td>Hace retroceder el cabezal de reproducción 15 segundos</td>
         </tr>
         <tr>
-          <td><img alt="" src="/assets/images/live/play-button.png"/></td>
-          <td>Inicia la reproducción de vídeo desde la posición del cabezal de reproducción</td>
+          <td><img alt="" src="/assets/images/live/play-button.png" /></td>
+          <td>Inicia la reproducción de video desde la posición del cabezal de reproducción</td>
         </tr>
         <tr>
-          <td><img alt="" src="/assets/images/live/forward15-button.png"/></td>
-          <td>Salta el cabezal de reproducción 15 segundos</td>
+          <td><img alt="" src="/assets/images/live/forward15-button.png" /></td>
+          <td>Avanza el cabezal de reproducción 15 segundos</td>
         </tr>
         <tr>
-          <td><img alt="" src="/assets/images/live/live-button.png"/></td>
-          <td>Saltar a Live</td>
+          <td><img alt="" src="/assets/images/live/live-button.png" /></td>
+          <td>Saltar a vivir</td>
         </tr>
         <tr>
-          <td><img alt="" src="/assets/images/live/end-button.png"/></td>
+          <td><img alt="" src="/assets/images/live/end-button.png" /></td>
           <td>Saltar al final</td>
         </tr>
       </tbody>
@@ -572,63 +111,63 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
   <section class="bcls-section">
     <h2 id="Clip_time">Tiempo de clip</h2>
-    <p>La hora del clip muestra la hora UTC actual del cabezal de reproducción y la hora recortable. Al hacer clic en el enlace UTC se cambiará a la visualización de la hora local.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/live/clip-time.png"/></figure>
+    <p>La hora del clip muestra la hora UTC actual para el cabezal de reproducción y la hora recortable. Al hacer clic en el enlace UTC cambiará a la visualización de la hora local.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/live/clip-time.png" /></figure>
   </section>
   <section class="bcls-section">
     <h2 id="Clipping_buttons">Botones de recorte</h2>
-    <p>Los botones de recorte se utilizan para recortar la parte deseada del vídeo de origen.</p>
+    <p>Los botones de recorte se utilizan para recortar la parte deseada del video fuente.</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th width="124">Button</th>
+          <th width="124">Botón</th>
           <th width="709">Descripción</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td><img alt="" src="/assets/images/live/go-cue-in-button.png"/></td>
-          <td>Salta a la señal en el punto del video</td>
+          <td><img alt="" src="/assets/images/live/go-cue-in-button.png" /></td>
+          <td>Salta al punto de inicio del video.</td>
         </tr>
         <tr>
-          <td><img alt="" src="/assets/images/live/set-cue-in-button.png"/></td>
-          <td>Establece el punto inicial del clip. El punto inicial también se puede establecer arrastrando el controlador al principio de la línea de tiempo de enfoque.</td>
+          <td><img alt="" src="/assets/images/live/set-cue-in-button.png" /></td>
+          <td>Establece el punto de inicio del clip. El punto de inicio también se puede establecer arrastrando el controlador al comienzo de la línea de tiempo de enfoque.</td>
         </tr>
         <tr>
-          <td><img alt="" src="/assets/images/live/set-cue-out-button.png"/></td>
+          <td><img alt="" src="/assets/images/live/set-cue-out-button.png" /></td>
           <td>Establece el punto final del clip. El punto final también se puede establecer arrastrando el controlador al final de la línea de tiempo de enfoque.</td>
         </tr>
         <tr>
-          <td><img alt="" src="/assets/images/live/go-cue-out-button.png"/></td>
-          <td>Salta al punto de salida del video</td>
+          <td><img alt="" src="/assets/images/live/go-cue-out-button.png" /></td>
+          <td>Salta al punto de salida del video.</td>
         </tr>
       </tbody>
     </table>
-    <p>Los puntos de entrada y salida de entrada son el inicio y el final de un clip. Cada uno de estos puntos se representa en la línea de tiempo de enfoque con un controlador arrastrable, y el tiempo entre los puntos se rellena en verde. Los puntos también se representan en la línea de tiempo del contexto como los bordes izquierdo y derecho del rectángulo verde que indica el espacio de clip.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/live/cue-in-out-example.png"/></figure>
+    <p>Los puntos de entrada y salida son el inicio y el final de un clip. Cada uno de estos puntos se representa en la línea de tiempo de enfoque con un controlador que se puede arrastrar, y el tiempo entre los puntos se rellena en verde. Los puntos también se representan en la línea de tiempo del contexto como los bordes izquierdo y derecho del rectángulo verde que indica el espacio del clip.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/live/cue-in-out-example.png" /></figure>
   </section>
   <section class="bcls-section">
     <h2 id="Preview clip">Vista previa del clip</h2>
     <p>Haga clic en el botón de vista previa del clip para reproducir el clip.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/live/preview-clip-button.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/live/preview-clip-button.png" /></figure>
   </section>
   <section class="bcls-section">
-    <h2 id="Playhead">Playhead</h2>
-    <p>El cabezal de reproducción es un indicador de dónde está jugando el jugador en el tiempo. El cabezal de reproducción se representa en la línea de tiempo de enfoque por una línea roja con un círculo rojo en la parte superior y con una línea vertical roja en la línea de tiempo del contexto.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/live/playhead.png"/></figure>
-    <p>En la línea de tiempo de enfoque, el cabezal de reproducción se puede arrastrar para pasar por el vídeo. Al hacer doble clic en la línea de tiempo de enfoque, el cabezal de reproducción se moverá a ese punto. El cabezal de reproducción también se puede utilizar para establecer puntos de entrada y salida mediante los botones de entrada y salida o mediante los métodos abreviados de teclado.</p>
+    <h2 id="Playhead">Cabeza lectora</h2>
+    <p>El cabezal de reproducción es un indicador de dónde está jugando el reproductor en el tiempo. La cabeza lectora está representada en la línea de tiempo de enfoque por una línea roja con un círculo rojo en la parte superior y con una línea vertical roja en la línea de tiempo de contexto.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/live/playhead.png" /></figure>
+    <p>En la línea de tiempo de enfoque, el cabezal de reproducción se puede arrastrar para desplazarse por el video. Al hacer doble clic en la línea de tiempo de enfoque, la cabeza lectora se moverá a ese punto. El cabezal de reproducción también se puede utilizar para establecer puntos de entrada y salida mediante los botones de entrada / salida o mediante los métodos abreviados de teclado.</p>
   </section>
   <section class="bcls-section">
     <h2 id="Focus_timeline">Línea de tiempo de enfoque</h2>
-    <p>La línea de tiempo de enfoque es la línea de tiempo superior de la interfaz.</p>
-    <p>El cabezal de reproducción es un indicador de dónde está jugando el jugador en el tiempo. El cabezal de reproducción se representa en la línea de tiempo de enfoque por una línea roja con un círculo rojo en la parte superior.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/live/focus-timeline.png"/></figure>
+    <p>La línea de tiempo de enfoque es la línea de tiempo superior en la interfaz.</p>
+    <p>El cabezal de reproducción es un indicador de dónde está jugando el reproductor en el tiempo. El cabezal de reproducción está representado en la línea de tiempo de enfoque mediante una línea roja con un círculo rojo en la parte superior.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/live/focus-timeline.png" /></figure>
     <p>&nbsp;</p>
   </section>
   <section class="bcls-section">
     <h2 id="Context_timeline">Cronología del contexto</h2>
-    <p>La línea de tiempo de contexto es la línea de tiempo inferior en el editor de clips. La línea de tiempo de contexto muestra toda la duración del vídeo, independientemente del nivel de zoom, el área seleccionada del clip, la ubicación del cabezal de reproducción y la ventana gráfica de enfoque actual. La línea de tiempo se indica con una línea roja.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/live/context-timeline.png"/></figure>
+    <p>La línea de tiempo del contexto es la línea de tiempo inferior en el editor de clips. La línea de tiempo del contexto muestra la duración completa del video, independientemente del nivel de zoom, el área seleccionada del clip, la ubicación del cabezal de reproducción y la ventana de enfoque actual. La línea de tiempo se indica con una línea roja.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/live/context-timeline.png" /></figure>
   </section>
   <section class="bcls-section">
     <h2 id="Zoom_buttons">Botones de zoom</h2>
@@ -636,49 +175,49 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th>Button</th>
+          <th>Botón</th>
           <th>Descripción</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td><img alt="" src="/assets/images/live/zoom-in-button.png"/></td>
-          <td>Amplía la línea de tiempo de enfoque. La ventana gráfica de enfoque (cuadro blanco) en la línea de tiempo del contexto mostrará el área del clip que se está mostrando en la línea de tiempo de enfoque.</td>
+          <td><img alt="" src="/assets/images/live/zoom-in-button.png" /></td>
+          <td>Amplía la línea de tiempo del enfoque. La ventana gráfica de enfoque (cuadro blanco) de la línea de tiempo de contexto mostrará el área del clip que se muestra en la línea de tiempo de enfoque.</td>
         </tr>
         <tr>
-          <td><img alt="" src="/assets/images/live/zoom-out-button.png"/></td>
-          <td>Alede la línea de tiempo de enfoque. La ventana gráfica de enfoque (cuadro blanco) en la línea de tiempo del contexto mostrará el área del clip que se está mostrando en la línea de tiempo de enfoque.</td>
+          <td><img alt="" src="/assets/images/live/zoom-out-button.png" /></td>
+          <td>Reduce la línea de tiempo de enfoque. La ventana gráfica de enfoque (cuadro blanco) de la línea de tiempo de contexto mostrará el área del clip que se muestra en la línea de tiempo de enfoque.</td>
         </tr>
       </tbody>
     </table>
   </section>
   <section class="bcls-section">
     <h2 id="List_of_clips">Lista de clips</h2>
-    <p>Aparecerá una lista de clips debajo del editor de clips. Al hacer clic en el <strong>nombre del clip</strong> , se abrirá el clip en la página Vídeos de otra pestaña del navegador.</p>
+    <p>Aparecerá una lista de clips debajo del editor de clips. Al hacer clic en el nombre del <strong>clip,</strong> se abrirá el clip en la página Vídeos de otra pestaña del navegador.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="Keyboard_shortcuts">Accesos directos de teclado</h2>
-    <p>Los métodos abreviados de teclado también se pueden utilizar para reproducir y crear un clip a partir del vídeo. Los siguientes métodos abreviados de teclado están disponibles.</p>
+    <h2 id="Keyboard_shortcuts">Atajos de teclado</h2>
+    <p>Los atajos de teclado también se pueden usar para reproducir y crear un clip a partir del video. Están disponibles los siguientes atajos de teclado.</p>
     <h3>Controles de reproducción</h3>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th width="234">Presione esta tecla</th>
+          <th width="234">Presiona esta tecla</th>
           <th width="639">Para hacer esto</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
           <td><code translate="No">space, k, down</code></td>
-          <td>Reproducir/Pausa</td>
+          <td>Reproducir pausar</td>
         </tr>
         <tr>
           <td><code translate="No">I</code></td>
-          <td>Ir al final del intersticio</td>
+          <td>Ir a cue-in</td>
         </tr>
         <tr>
           <td><code translate="No">O</code></td>
-          <td>Ir al comienzo del intersticio</td>
+          <td>Ir a cue-out</td>
         </tr>
         <tr>
           <td><code translate="No">p</code></td>
@@ -686,220 +225,65 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </tr>
         <tr>
           <td><code translate="No">j, left</code></td>
-          <td>Saltar hacia atrás 1 cuadro</td>
+          <td>Saltar 1 fotograma hacia atrás</td>
         </tr>
         <tr>
           <td><code translate="No">J, shift + left</code></td>
-          <td>Retroceder 1 segundo</td>
+          <td>Salta 1 segundo hacia atrás</td>
         </tr>
         <tr>
           <td><code translate="No">l, right</code></td>
-          <td>Avanzar 1 fotograma</td>
+          <td>Saltar 1 fotograma hacia adelante</td>
         </tr>
         <tr>
           <td><code translate="No">L, shift + right</code></td>
-          <td>Avanzar 1 segundo</td>
+          <td>Salta 1 segundo hacia adelante</td>
         </tr>
         <tr>
           <td><code translate="No">s</code></td>
-          <td>Saltar al inicio</td>
+          <td>Saltar para empezar</td>
         </tr>
         <tr>
           <td><code translate="No">e</code></td>
-          <td>Saltar al final/en vivo</td>
+          <td>Saltar al final / en vivo</td>
         </tr>
       </tbody>
     </table>
-    <h3>Controles de cronología</h3>
+    <h3>Controles de la línea de tiempo</h3>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th width="234">Presione esta tecla</th>
+          <th width="234">Presiona esta tecla</th>
           <th width="639">Para hacer esto</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
           <td><code translate="No">i</code></td>
-          <td>Establecer final del intersticio</td>
+          <td>Establecer cue-in</td>
         </tr>
         <tr>
           <td><code translate="No">o</code></td>
-          <td>Establecer comienzo del intersticio</td>
+          <td>Establecer salida de señal</td>
         </tr>
         <tr>
           <td><code translate="No">+</code></td>
-          <td>Acercar</td>
+          <td>Acercarse</td>
         </tr>
         <tr>
           <td><code translate="No">-</code></td>
-          <td>Alejar</td>
+          <td>Disminuir el zoom</td>
         </tr>
         <tr>
           <td><code translate="No">u</code></td>
-          <td>Acoplar línea de tiempo al cabezal de reproducción</td>
+          <td>Desplazar la línea de tiempo al cabezal de reproducción</td>
         </tr>
         <tr>
           <td><code translate="No">?</code></td>
-          <td>Abrir ayuda modal</td>
+          <td>Abrir modal de ayuda</td>
         </tr>
       </tbody>
     </table>
   </section>
   <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script> 
 </article>
-
-<!-- complete bootstrap layout -->
-    </div>
-    <div class="col-sm-2 right-side-bar">
-      
-      <nav class="right-side-nav" id="right_side_nav">
-        <h6 class="toc">Contenido de la página</h6>
-        <ul id="in_page_nav" class="list-none"></ul>
-      </nav>
-      
-    </div>
-  </div>
-</div>
-
-<hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
-    <div class="region region-footer-top-center col-md-12">
-      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
-
-        <h2>Asistencia técnica de Brightcove</h2>
-
-        <ul class="menu">
-          <li>
-            Estado del sistema<a href="https://status.brightcove.com"></a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Contactar soporte</a>
-          </li>
-          <li>
-            <a href="https://support.brightcove.com/">Documentación</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
-
-        <h2>Formación</h2>
-
-        <ul class="menu">
-          <li>
-            Cursos en línea<a href="https://studio.support.brightcove.com/training/online-training-courses.html"></a>
-          </li>
-          <li>
-            Inscríbete a un curso<a href="https://studio.support.brightcove.com/training/register-training.html"></a>
-          </li>
-          <li>
-            <a href="https://university.brightcove.com/">Universidad de Brightcove</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
-
-        <h2>Brightcove</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://www.brightcove.com">BrightCove.com</a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Contáctanos</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-  <div class="row">
-    <div class="region region-footer-bottom-center col-md-12">
-      <div class="bcls-copyright footer-menu">
-        <table>
-          <tr>
-            <td>
-              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
-            </td>
-            <td>Privacidad | Términos y Condiciones<a href="https://www.brightcove.com/en/legal/privacy"></a><a href="https://www.brightcove.com/en/terms-and-conditions"></a></td>
-            <td>
-              <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script>
-      
-  var searchBox = sajari.init({
-    mode: "search-box",
-    project: "1588255093746585379", // Set this to your project.
-    collection: "brightcove-documenation", // Set this to your collection.
-    instantPipeline: "autocomplete", // Pipeline used as you type
-    inputPlaceholder: "Search", // Input element placeholder
-    maxSuggestions: 5, // Maximum number of suggestions to show
-    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
-  });
-  
-    searchBox("sub", "pipeline.search-sent", function (_, query) {
-      window.location = "/search.html?q=" + encodeURIComponent(query.q);
-    });
-  
-
-</script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
-  <script src="/assets/js/sites_nav.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
-  <script src="/assets/js/feedback.js"></script>
-  
-  <script src="/assets/js/sajari-search-foot.js"></script>
-  
-  <!-- <script src="/assets/js/sajari-index.js"></script> -->
-  <style>
-    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
-      background-color: lightblue;
-    }
-    div.sj-tabs__tab {
-      margin-top: 3rem;
-      margin-left: .3rem;
-      border-top-left-radius: .4rem;
-      border-top-right-radius: .4rem;
-      background-color:#e8e8e8;
-    }
-
-    div.sj-tabs__tab.sj-tabs__tab--selected {
-      border-bottom-color: crimson;
-      background-color: #f8f8f8;
-    }
-
-    p.sj-results__result__description.css-p9jvyt {
-      font-size: 1rem;
-    }
-
-    .sj-result__text.css-31l7gp h3 {
-      color: navy;
-      font-size: 1.4rem;
-    }
-    </style>
-
-</body>
-
-</html>

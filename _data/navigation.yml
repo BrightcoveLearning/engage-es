@@ -1,0 +1,162 @@
+- section: 
+  name: Inicio
+  url: /index.html
+- section: 
+  name: Empezar
+  url: /get-started/index.html
+  docs:
+    - name: Requisitos del sistema Brightcove Engage
+      url: /get-started/brightcove-engage-system-requirements.html
+    - name: Vídeos de formación Brightcove Engage
+      url: /get-started/brightcove-engage-training-videos.html
+    - name: Creación de experiencias de aplicaciones móviles
+      url: /get-started/overview-create-edit-publish-mobile-app-exp.html
+    - name: Creando experiencias web
+      url: /get-started/overview-create-edit-publish-web-exp.html
+    - name: Introducción a Brightcove Engage
+      url: /get-started/getting-started-brightcove-engage.html
+    - name: Introducción a la versión de prueba de Brightcove Engage
+      url: /get-started/getting-started-brightcove-engage-trial.html
+    - name: Paso a paso: creación de una experiencia de aplicación móvil
+      url: /get-started/step-by-step-mobile-app.html
+    - name: Paso a paso: creación de una experiencia web
+      url: /get-started/step-by-step-web-exp.html
+    - name: Uso de la aplicación Brightcove Engage
+      url: /get-started/using-brightcove-engage-app.html
+- section: 
+  name: Gestión de vídeos
+  url: /videos/index.html
+  docs:
+    - name: Adición de pistas de texto
+      url: /videos/adding-text-tracks-to-a-video.html
+    - name: Captura de imágenes de póster y miniaturas
+      url: /videos/capturing-poster-and-thumbnail-images.html
+    - name: Configuración de la disponibilidad de video
+      url: /videos/configuring-video-availability.html
+    - name: Creación y gestión de listas de reproducción
+      url: /videos/creating-and-managing-playlists.html
+    - name: Edición de propiedades de vídeo
+      url: /videos/editing-video-properties.html
+    - name: Edición de propiedades de video con edición rápida
+      url: /videos/editing-video-properties-using-quick-edit.html
+    - name: Exportación de datos de video
+      url: /videos/exporting-video-data.html
+    - name: Gestión de vídeos
+      url: /videos/managing-videos.html
+    - name: Buscando videos
+      url: /videos/how-to-search-for-videos.html
+    - name: Cargar imágenes de póster y miniaturas
+      url: /videos/uploading-poster-and-thumbnail-images.html
+    - name: Subir vídeos
+      url: /videos/uploading-videos.html
+    - name: Trabajo con vídeos compartidos
+      url: /videos/working-with-shared-videos.html
+- section: 
+  name: Creando Experiencias
+  url: /experiences/index.html
+  docs:
+    - name: Agregar un logotipo a las páginas de experiencia de aplicaciones móviles
+      url: /experiences/adding-logo-mobile-app-experience.html
+    - name: Adición de imágenes, texto y enlaces a páginas de experiencia web
+      url: /experiences/adding-objects-web-experience-pages.html
+    - name: Agregar videos a una experiencia
+      url: /experiences/adding-videos-experience.html
+    - name: Asignar un dominio personalizado a una experiencia web
+      url: /experiences/assigning-custom-domain-web-experience.html
+    - name: Configuración de dominios personalizados y SSL
+      url: /experiences/configuring-custom-domains-and-ssl.html
+    - name: Configurar los ajustes de la experiencia
+      url: /experiences/configuring-experience-settings.html
+    - name: Configurar el inicio de sesión único con ADFS
+      url: /experiences/configuring-single-sign-active-directory-federation-services.html
+    - name: Controlar el acceso a una experiencia
+      url: /experiences/controlling-access-experience.html
+    - name: Creación de perfiles de control de acceso
+      url: /experiences/creating-access-control-profiles.html
+    - name: Creación de notificaciones push
+      url: /experiences/creating-and-managing-push-notifications.html
+    - name: Creación y gestión de experiencias
+      url: /experiences/creating-and-managing-experiences.html
+    - name: Personalización de experiencias de aplicaciones móviles
+      url: /experiences/using-experience-editor-customize-mobile-app-experience.html
+    - name: Personalización de experiencias web
+      url: /experiences/using-experience-editor-customize-web-experience.html
+    - name: Editar detalles de la experiencia
+      url: /experiences/editing-experience-details.html
+    - name: Gestión de colecciones
+      url: /experiences/managing-collections.html
+    - name: Gestión de proyectos
+      url: /experiences/managing-projects.html   
+    - name: Descripción general de las plantillas de experiencia
+      url: /experiences/overview-experience-templates.html
+    - name: Vista previa y publicación de experiencias de aplicaciones móviles
+      url: /experiences/previewing-publishing-mobile-app-experience.html
+    - name: Vista previa y publicación de experiencias web
+      url: /experiences/previewing-publishing-web-experience.html
+    - name: Asegurar una experiencia web con SSL
+      url: /experiences/securing-web-experience-ssl.html
+    - name: Asegurar experiencias con Auth0
+      url: /experiences/securing-experiences-auth0.html
+    - name: Protección de experiencias con Auth0 sin contraseña
+      url: /experiences/securing-experiences-passwordless.html
+    - name: Asegurar experiencias con Okta
+      url: /experiences/securing-experiences-okta.html
+    - name: Asegurar experiencias con PingOne
+      url: /experiences/securing-experiences-pingone.html
+    - name: Diseñar experiencias de aplicaciones móviles
+      url: /experiences/styling-mobile-app-experiences.html
+    - name: Diseñar experiencias web
+      url: /experiences/styling-web-experiences.html
+- section: 
+  name: Gestión de eventos en directo
+  url: /live/index.html
+  docs:
+    - name: Creación y gestión de eventos en directo
+      url: /live/creating-and-managing-live-events-using-live-module.html
+    - name: Creación de clips de vídeo
+      url: /live/creating-video-clips.html
+    - name: Uso de la sala de control
+      url: /live/viewing-live-event-info-control-room.html
+- section: 
+  name: Revisión de Analytics
+  url: /analytics/index.html
+  docs:
+    - name: Revisión de análisis de vídeo
+      url: /analytics/reviewing-video-analytics.html
+- section: 
+  name: Administración de cuentas
+  url: /admin/index.html
+  docs:
+    - name: Administración de la información de cuentas
+      url: /admin/managing-account-information.html
+    - name: Administración de la configuración de cuentas
+      url: /admin/managing-account-settings.html
+    - name: Administración de la configuración para compartir medios
+      url: /admin/managing-media-sharing-settings.html
+    - name: Gestión de la información de perfil
+      url: /admin/managing-profile-information.html
+    - name: Administración de usuarios
+      url: /admin/managing-users.html
+    - name: Administrar campos de video
+      url: /admin/managing-video-fields.html
+- section: 
+  name: Notas de versión
+  url: /release-notes/index.html
+  docs:
+    - 2020name: 
+      url: /release-notes/2020.html
+- section: 
+  name: Soporte
+  url: /support/index.html
+  docs:
+    - name: 'Visualización de la página de estado del sistema Brightcove'
+      url: '/support/viewing-brightcove-system-status-page.html'
+    - name: 'Contactar con ventas'
+      url: '/support/contact-sales.html'
+    - name: 'Abrir un caso de soporte'
+      url: '/support/opening-case-with-brightcove-support.html'
+    - name: 'Restablecer la contraseña del portal de soporte'
+      url: '/support/reset-support-portal-password.html'
+# TODO correct and add additional sections/pages
+# TODO note that the order of items here determines the order in navigation
+# TODO indentation in YAML is crucial and must be with spaces (not tabs!)

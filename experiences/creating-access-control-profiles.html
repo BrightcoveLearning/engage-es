@@ -1,696 +1,80 @@
-﻿<!doctype html>
-<html lang="es-es">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  
-  <title>Creación de perfiles de control de acceso</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">  
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
-  <link rel="stylesheet" href="/assets/css/local.css">
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
-  <script src="/assets/js/sajari-head.js"></script>
-</head>
-
-<body class="body">
-
-<header>
-  <div class="div-header">
-    <a href="/"><span class="product-logo" style="font-family:'Balto Web','Public Sans';font-size:2em;font-weight:bold;">BRIGHTCOVE ENGAGE<sup>™</sup></span></a>
-<!-- GTranslate: https://gtranslate.io/ -->
-<select onchange="doGTranslate(this);"><option value="">Seleccionar idioma</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
-
-<script>
-/* <![CDATA[ */
-function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
-/* ]]> */
-</script>
-
-    
-
-
-    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="soporte"/> Contactar con Soporte</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/">Estado<img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="estado del sistema"/> del sistema</a></span> <br/>
-    
-  </div>
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb arr-right">
-      
-      <li class="breadcrumb-item"><a href="/">Inicio</a></li>
-      
-      
-      
-      <li class="breadcrumb-item">Experiencias<a href="/experiences/"></a></li>
-      
-      <li class="breadcrumb-item active" aria-current="page">Creación de perfiles de control de acceso</li>
-    </ol>
-  </nav>
-</header>
-<div class="container">
-    <div class="row">
-            <div class="col-sm-3 left-side-bar">
-        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-          <option value="">Otros documentos de Brightcove</option>
-          
-            
-              <option value="https://support.brightcove.com">Documentación Inicio</option>
-            
-          
-            
-              <option value="https://audience.support.brightcove.com">Audiencia de Brightcove</option>
-            
-          
-            
-              <option value="https://beacon.support.brightcove.com">Baliza Brightcove</option>
-            
-          
-            
-              <option value="https://campaign.support.brightcove.com">Campaña de Brightcove</option>
-            
-          
-            
-              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
-            
-          
-            
-              <option value="https://live.support.brightcove.com">Brightcove Live</option>
-            
-          
-            
-              <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
-            
-          
-            
-              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-            
-          
-            
-              <option value="https://social.support.brightcove.com">Brightcove Social</option>
-            
-          
-            
-              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
-            
-          
-            
-              <option value="https://player.support.brightcove.com">Desarrollo de jugadores de Brightcove</option>
-            
-          
-            
-              <option value="https://apis.support.brightcove.com">API para la plataforma de Video Cloud</option>
-            
-          
-            
-              <option value="https://sdks.support.brightcove.com">SDK de dispositivos de Video Cloud</option>
-            
-          
-            
-              <option value="https://integrations.support.brightcove.com">Integraciones y conectores CMS</option>
-            
-          
-            
-              <option value="https://general.support.brightcove.com">Información general de Video Cloud</option>
-            
-          
-            
-              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
-            
-          
-        </select>
-
-        <nav class="sidenav" id="side_nav">
-          
-            
-            <h5><a href="/index.html">Inicio</a></h5>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/get-started/index.html">Empezar <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/get-started/brightcove-engage-system-requirements.html">Requisitos del sistema Brightcove Engage</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/brightcove-engage-training-videos.html">Vídeos de capacitación de Brightcove Engage</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/overview-create-edit-publish-mobile-app-exp.html">Creación de experiencias de aplicaciones móviles</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/overview-create-edit-publish-web-exp.html">Creación de experiencias web</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/getting-started-brightcove-engage.html">Introducción a Brightcove Engage</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/getting-started-brightcove-engage-trial.html">Introducción a su prueba de Brightcove Engage</a></li>
-                  
-                
-                  
-                    <li>Paso a paso - Creación de una experiencia de aplicación móvil<a href="/get-started/step-by-step-mobile-app.html"></a></li>
-                  
-                
-                  
-                    <li>Paso a paso - Creación de una experiencia web<a href="/get-started/step-by-step-web-exp.html"></a></li>
-                  
-                
-                  
-                    <li>Uso de la aplicación Brightcove Engage<a href="/get-started/using-brightcove-engage-app.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Gestión de Vídeos +<a href="/videos/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/videos/adding-text-tracks-to-a-video.html">Adición de pistas de texto</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/capturing-poster-and-thumbnail-images.html">Captura de póster y imágenes en miniatura</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/configuring-video-availability.html">Configuración de la disponibilidad de vídeo</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/creating-and-managing-playlists.html">Creación y administración de listas de reproducción</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/editing-video-properties.html">Edición de propiedades de vídeo</a></li>
-                  
-                
-                  
-                    <li><a href="/videos/editing-video-properties-using-quick-edit.html">Edición de propiedades de vídeo con edición rápida</a></li>
-                  
-                
-                  
-                    <li>Exportar datos de vídeo<a href="/videos/exporting-video-data.html"></a></li>
-                  
-                
-                  
-                    <li>Gestión de Vídeos<a href="/videos/managing-videos.html"></a></li>
-                  
-                
-                  
-                    <li>Búsqueda de vídeos<a href="/videos/how-to-search-for-videos.html"></a></li>
-                  
-                
-                  
-                    <li>Cargar imágenes de póster y miniatura<a href="/videos/uploading-poster-and-thumbnail-images.html"></a></li>
-                  
-                
-                  
-                    <li>Subir vídeos<a href="/videos/uploading-videos.html"></a></li>
-                  
-                
-                  
-                    <li>Trabajar con vídeos compartidos<a href="/videos/working-with-shared-videos.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/experiences/index.html">Creación de experiencias <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/experiences/adding-logo-mobile-app-experience.html">Agregar un logotipo a las páginas de experiencia de aplicaciones móviles</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/adding-objects-web-experience-pages.html">Adición de imágenes, texto y vínculos a páginas de experiencia web</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/adding-videos-experience.html">Adición de vídeos a una experiencia</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/assigning-custom-domain-web-experience.html">Asignación de un dominio personalizado a una experiencia Web</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/configuring-custom-domains-and-ssl.html">Configuración de dominios personalizados y SSL</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/configuring-experience-settings.html">Configuración de la experiencia</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/configuring-single-sign-active-directory-federation-services.html">Configuración de inicio de sesión único con ADFS</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/controlling-access-experience.html">Control del acceso a una experiencia</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/creating-access-control-profiles.html">Creación de perfiles de control de acceso</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/creating-and-managing-push-notifications.html">Creación de notificaciones push</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/creating-and-managing-experiences.html">Creación y gestión de experiencias</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/using-experience-editor-customize-mobile-app-experience.html">Personalización de experiencias de aplicaciones móviles</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/using-experience-editor-customize-web-experience.html">Personalización de experiencias web</a></li>
-                  
-                
-                  
-                    <li><a href="/experiences/editing-experience-details.html">Detalles de la experiencia de edición</a></li>
-                  
-                
-                  
-                    <li>Administrar colecciones<a href="/experiences/managing-collections.html"></a></li>
-                  
-                
-                  
-                    <li>Gestión de Proyectos<a href="/experiences/managing-projects.html"></a></li>
-                  
-                
-                  
-                    <li>Descripción general de las plantillas de experiencia<a href="/experiences/overview-experience-templates.html"></a></li>
-                  
-                
-                  
-                    <li>Vista previa y publicación de experiencias de aplicaciones móviles<a href="/experiences/previewing-publishing-mobile-app-experience.html"></a></li>
-                  
-                
-                  
-                    <li>Vista previa y publicación de experiencias web<a href="/experiences/previewing-publishing-web-experience.html"></a></li>
-                  
-                
-                  
-                    <li>Proteger una experiencia web con SSL<a href="/experiences/securing-web-experience-ssl.html"></a></li>
-                  
-                
-                  
-                    <li>Protección de experiencias con Auth0<a href="/experiences/securing-experiences-auth0.html"></a></li>
-                  
-                
-                  
-                    <li>Protección de experiencias con Auth0 sin contraseña<a href="/experiences/securing-experiences-passwordless.html"></a></li>
-                  
-                
-                  
-                    <li>Asegurar experiencias con Okta<a href="/experiences/securing-experiences-okta.html"></a></li>
-                  
-                
-                  
-                    <li>Protección de experiencias con PingOne<a href="/experiences/securing-experiences-pingone.html"></a></li>
-                  
-                
-                  
-                    <li>Diseño de experiencias de aplicaciones móviles<a href="/experiences/styling-mobile-app-experiences.html"></a></li>
-                  
-                
-                  
-                    <li>Estilo de experiencias web<a href="/experiences/styling-web-experiences.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Gestión de eventos en directo +<a href="/live/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/live/creating-and-managing-live-events-using-live-module.html">Creación y administración de eventos en directo</a></li>
-                  
-                
-                  
-                    <li><a href="/live/creating-video-clips.html">Creación de clips de vídeo</a></li>
-                  
-                
-                  
-                    <li>Uso de la sala de control<a href="/live/viewing-live-event-info-control-room.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Revisión de Analytics +<a href="/analytics/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li>Revisión de análisis de vídeo<a href="/analytics/reviewing-video-analytics.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/admin/index.html">Administrar cuentas <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li>Gestión de la información de cuenta<a href="/admin/managing-account-information.html"></a></li>
-                  
-                
-                  
-                    <li>Administrar la configuración de cuenta<a href="/admin/managing-account-settings.html"></a></li>
-                  
-                
-                  
-                    <li>Administrar la configuración de uso compartido de<a href="/admin/managing-media-sharing-settings.html"></a></li>
-                  
-                
-                  
-                    <li>Gestión de la información de perfil<a href="/admin/managing-profile-information.html"></a></li>
-                  
-                
-                  
-                    <li>Administrar usuarios<a href="/admin/managing-users.html"></a></li>
-                  
-                
-                  
-                    <li>Administrar campos de vídeo<a href="/admin/managing-video-fields.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Notas de la versión +<a href="/release-notes/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/release-notes/2020.html">2020</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header">Soporte +<a href="/support/index.html"><strong></strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    
-                  
-                
-                  
-                    <li>Visualización de la página Estado del Sistema de Brightcove<a href="/support/viewing-brightcove-system-status-page.html"></a></li>
-                  
-                
-                  
-                    <li><a href="/support/contact-sales.html">Contacto con Ventas</a></li>
-                  
-                
-                  
-                    <li>Apertura de un caso de soporte<a href="/support/opening-case-with-brightcove-support.html"></a></li>
-                  
-                
-              </ul>
-            
-          
-      </nav>
-    </div>
-    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
-  <!-- bootstrap layout -->
-
-<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menú de navegación"/></p>
-
-<!-- search bar -->
-<div id="nav-search-box" style="margin-top: 1rem;"></div>
-<!-- in-page navigation for narrow screens -->
-<details class="centered-inpage-nav" id="centered_inpage_nav">
-  <summary><h6 class="toc">Contenido de la página</h6></summary>
-  <nav id="centered_toc"></nav>
-  <ul id="centered_in_page_toc" class="list-none"></ul>
-</details>
-<!-- open in new tab/window -->
-<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="abrir en una nueva pestaña" style="margin-top:4em;width: 1.5em;"/></a>
-
-
-
-  
-    
-
+---
+title: Creación de perfiles de control de acceso
+parent: Experiences
+---
 
 <article class="bcls-article">
 <h1>Creación de perfiles de control de acceso</h1>
-<summary>En este tema aprenderá a crear perfiles de control de acceso.</summary>
+<summary>En este tema, aprenderá a crear perfiles de control de acceso.</summary>
 <section class="bcls-section">
-  <p>De forma predeterminada, cuando se publica una experiencia de Brightcove Engage™, las experiencias son públicas:</p>
+  <p>De forma predeterminada, cuando Brightcove Engage&trade; se publica la experiencia, las experiencias son públicas:</p>
   <ul>
-    <li><strong>Aplicaciones móviles</strong> - Cualquier persona con la clave de acceso y puede acceder a la aplicación</li>
-    <li><strong>Aplicaciones Web</strong> - Cualquier persona con la URL del sitio podrá acceder al portal web</li>
+    <li><strong>Aplicaciones móviles</strong> - Cualquiera que tenga la clave de acceso y pueda acceder a la aplicación</li>
+    <li><strong>Aplicaciones web</strong> - Cualquiera que tenga la URL del sitio podrá acceder al portal web.</li>
   </ul>
-  <p>Los perfiles de control de acceso se pueden crear para que los usuarios se vean obligados a autenticarse con credenciales válidas antes de que puedan acceder a la aplicación/sitio. Brightcove Engage admite el estándar de lenguaje de marcado de aserción de seguridad 2.0 (SAML 2.0) para intercambiar datos de autenticación y autorización entre dominios de seguridad.</p>
-  <p>Brightcove Engage es compatible con la mayoría de los principales proveedores de identidades, incluidos:</p>
+  <p>Se pueden crear perfiles de control de acceso para que los usuarios se vean obligados a autenticarse con credenciales válidas antes de que puedan acceder a la aplicación / sitio. Brightcove Engage admite el estándar Security Assertion Markup Language 2.0 (SAML 2.0) para intercambiar datos de autenticación y autorización entre dominios de seguridad.</p>
+  <p>Brightcove Engage es compatible con la mayoría de los principales proveedores de identidad, incluidos:</p>
   <ul>
-    <li>Ping</li>
+    <li>Silbido</li>
     <li>OneLogin</li>
     <li>Auth0</li>
     <li>ADFS 2.0/3.0</li>
     <li>Google G Suite</li>
-    <li>Shibboleth</li>
+    <li>Santo y seña</li>
     <li>Okta</li>
     <li>Salesforce.com</li>
   </ul>
-  <p>Otros proveedores que utilicen el estándar SAML 2.0 también funcionarán.</p>
-  <aside class="bcls-aside">Nota: Brightcove Engage requiere SAML 2.0 para la autenticación de inicio de sesión único. La versión 1.1 de SAML no es compatible.</aside>
-  <p>Al configurar el software SSO, asigne los siguientes atributos:</p>
+  <p>También funcionarán otros proveedores que utilicen el estándar SAML 2.0.</p>
+  <aside class="bcls-aside">Nota: Brightcove Engage requiere SAML 2.0 para la autenticación de inicio de sesión único. SAML 1.1 no se admite.</aside>
+  <p>Al configurar su software SSO, asigne los siguientes atributos:</p>
   <ul>
-    <li>FirstName se asigna a Nombre</li>
-    <li>Apellido se asigna a Apellidos</li>
-    <li>Correo electrónico Maps to Email</li>
+    <li>firstName se asigna a First Name</li>
+    <li>lastName se asigna a Last Name</li>
+    <li>enviar mapas por correo electrónico al correo electrónico</li>
   </ul>
-  <p>A continuación se muestra un mapeo de ejemplo:</p>
-  <figure class="bcls-figure"><img class="bcls-image--no-border" alt="lista de perfiles" src="/assets/images/configuration/ping-sso-config.png"/></figure>
-  <p>Al exponer estos valores, el nombre y el correo electrónico del usuario aparecerán en la página Perfil de la aplicación móvil y también aparecerán como parte del análisis de vídeo dentro de la aplicación Brightcove Engage.</p>
+  <p>A continuación, se muestra un mapa de muestra:</p>
+  <figure class="bcls-figure"><img class="bcls-image--no-border" alt="profiles list" src="/assets/images/configuration/ping-sso-config.png" /></figure>
+  <p>Al exponer estos valores, el nombre y el correo electrónico del usuario aparecerán en la página de perfil de la aplicación móvil y también aparecerán como parte del análisis de video dentro de la aplicación Brightcove Engage.</p>
 </section>
 <section class="bcls-section">
-  <h2 id="create">Creación de un nuevo perfil</h2>
-  <p>Los perfiles de control de acceso se crean como parte de la configuración del proyecto y, a continuación, se asignan a experiencias.
+  <h2 id="create">Creando un nuevo perfil</h2>
+  <p>Los perfiles de control de acceso se crean como parte de la configuración del proyecto y luego se asignan a las experiencias.
   <p>Para crear un perfil de control de acceso, siga estos pasos:</p>
   <ol class="bcls-tasklist-restart" style="--s:1">
     <li>Inicie sesión en Brightcove Engage.</li>
-    <li>En la página <strong>Proyectos</strong> , haga clic en <strong>Configuración</strong>.</li>
-    <li>En la navegación izquierda, haga clic en <strong>Perfiles de control de acceso</strong>. Se mostrará la página Perfiles de Control de Acceso con una lista de perfiles (si los hay) que se han creado.
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="lista de perfiles" src="/assets/images/configuration/access-control-profile-list.png"/></figure>
+    <li>Desde el <strong>Proyectos</strong> página, haga clic en <strong>Ajustes</strong>.</li>
+    <li>En la navegación izquierda, haz clic en Perfiles de control de <strong>acceso</strong>. Aparecerá la página Perfiles de control de acceso con una lista de perfiles (si los hay) que se han creado.
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="profiles list" src="/assets/images/configuration/access-control-profile-list.png" /></figure>
     </li>
-    <li>Haga clic en <strong>Crear perfil</strong>.</li>
-    <li>Escriba un <strong>nombre</strong> para el perfil.</li>
-    <li><strong>( Opcional)</strong> Configurar un <strong>tiempo de espera de sesión</strong>. Este es el tiempo que un usuario puede iniciar sesión en una aplicación antes de que tenga que volver a autenticarse. Observaciones:
+    <li>Haz clic en <strong>Crear perfil</strong>.</li>
+    <li>Asigne un <strong>nombre al perfil</strong>.</li>
+    <li><strong>(Opcional)</strong> Configurar un <strong>Hora de término de la sesión</strong>. Esta es la cantidad de tiempo que un usuario puede iniciar sesión en una aplicación antes de que deba volver a autenticarse. Algunas notas:
       <ul>
-        <li>Su proveedor de inicio de sesión único debe estar configurado para forzar la reautenticación o para tener un tiempo de espera de sesión inferior a este tiempo de espera. De lo contrario, cuando transcurra nuestro tiempo de espera se producirá una redirección a su proveedor de SSO, que emitirá inmediatamente como respuesta que el usuario tiene la sesión iniciada.</li>
+        <li>Su proveedor de SSO debe estar configurado para forzar la reautenticación o tener un tiempo de espera de sesión menor que este tiempo de espera. Si no es así, lo redireccionaremos a su proveedor de SSO después de nuestro tiempo de espera e inmediatamente emitirán una respuesta de que el usuario ha iniciado sesión.</li>
       </ul>
     </li>
-    <li>Seleccione la opción SSO.<strong></strong> Se mostrarán las opciones de configuración de SSO.</li>
-    <li>Si tiene un archivo de exportación de sus metadatos SAML 2.0, haga clic en <strong>Seleccionar archivo</strong> y, a continuación, examine y seleccione el archivo de metadatos. De esta forma se rellenan automáticamente los campos <strong>Punto final SAML 2.0</strong> y <strong>Certificado X.509</strong>.</li>
-    <li>Indique un valor para el <strong>Punto final SAML 2.0 (HTTP)</strong>. Su proveedor de SAML debe proporcionarle este valor.</li>
-    <li>Indique un valor para el <strong>Certificado X.509</strong>. Su proveedor de SAML debe proporcionarle este valor.</li>
-    <li>(Opcional) Introduzca la <strong>sustitución del emisor o de la entidad SAML</strong>. Introduzca aquí un valor para, opcionalmente, reemplazar al emisor SAML.</li>
-    <li>(Opcional) Introduzca la<strong> sustitución de URL de ACS</strong>. Introduzca aquí un valor, optativamente, para reemplazar la dirección ACL URL.</li>
-    <li>(Opcional) Introduzca la <strong>sustitución de AuthnContext de SAML</strong>. Introduzca aquí un valor para anular opcionalmente el AuthnContext SAML.</li>
-    <li>(Opcional) Introduzca los atributos SAML que desee pasar a su JavaScript externo.</li>
-    <li>(Opcional) Marque <strong>Exponer todos los atributos</strong> para exponer todos los atributos SAML para utilizarlos en JavaScript externo.
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="lista de perfiles" src="/assets/images/configuration/sso-configuration.png"/></figure>
+    <li>Selecciona el <strong>SSO</strong> opción. Aparecerán las opciones de configuración de SSO.</li>
+    <li>Si tiene un archivo de exportación de sus metadatos SAML 2.0, haga clic en <strong>Seleccione Archivo</strong> y luego busque y seleccione el archivo de metadatos. Esto rellenará previamente el <strong>Punto final SAML 2.0</strong> y el <strong>Certificado X.509</strong> los campos.</li>
+    <li>Introduzca un valor para el endpoint <strong>SAML 2.0 (HTTP)</strong>. Este valor debe estar disponible en su proveedor de SAML.</li>
+    <li>Ingrese un valor para <strong> Certificado X.509</strong>. Este valor debe estar disponible en su proveedor de SAML.</li>
+    <li>(Opcional) Ingrese el <strong>Reemplazo de ID de entidad / emisor de SAML</strong>. Ingrese un valor aquí para anular opcionalmente el emisor SAML.</li>
+    <li>(Opcional) Ingrese el<strong> Anulación de URL ACS</strong>. Ingrese un valor aquí para anular opcionalmente la URL de ACS.</li>
+    <li>(Opcional) Ingrese el <strong>Reemplazo de AuthnContext de SAML</strong>. Ingrese un valor aquí para anular opcionalmente SAML AuthnContext.</li>
+    <li>(Opcional) Ingrese los atributos de SAML que desee que se pasen a su JavaScript externo.</li>
+    <li>(Opcional) Verificar <strong>Exponer todos los atributos</strong> para exponer todos los atributos de SAML para su uso en JavaScript externo.
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="profiles list" src="/assets/images/configuration/sso-configuration.png" /></figure>
     </li>
-    <li>Haga clic en <strong>Guardar</strong>.</li>
-    <li>Compruebe que el perfil creado aparezca en la lista de Perfiles de control de acceso.
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="lista de perfiles" src="/assets/images/configuration/new-profile-in-list.png"/></figure>
+    <li>Haz clic en <strong>Guardar</strong>.</li>
+    <li>Verifique que el perfil que creó aparece en la lista de Perfiles de control de acceso.
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="profiles list" src="/assets/images/configuration/new-profile-in-list.png" /></figure>
     </li>
   </ol>
-  <p>Para editar o eliminar un perfil de control de acceso, haga clic en el icono edit (<img class="bcls-image--no-border" alt="icono de edición" src="/assets/images/configuration/edit-icon.png"/><img alt="icono de eliminar" src="/assets/images/configuration/delete-icon.png"/>) o delete () asociado al perfil. Una vez creados los perfiles de control de acceso, se pueden asignar a un sitio como parte de las propiedades del sitio. Para obtener información, consulte <a href="/experiences/controlling-access-experience.html">Control del acceso a una experiencia</a>.</p>
+  <p>Para editar o eliminar un perfil de control de acceso, haga clic en editar (<img class="bcls-image--no-border" alt="edit icon" src="/assets/images/configuration/edit-icon.png" />) o suprimir (<img alt="delete icon" src="/assets/images/configuration/delete-icon.png" />) icono asociado al perfil. Una vez que se han creado los perfiles de control de acceso, se pueden asignar a un sitio como parte de las propiedades del sitio. Para obtener información, consulte <a href="/experiences/controlling-access-experience.html">Controlar el acceso a una experiencia</a>.</p>
 </section>
 <section class="bcls-section">
   <h2 id="sso">Configuración de la URL de ACS</h2>
-  <p>Su proveedor de SSO le pedirá la dirección URL del servicio Assertion Consumer Service (ACL URL). La ACL URL aparece en la sección SSO de la tabla Perfiles de control de acceso.</p>
-  <figure class="bcls-figure"><img class="bcls-image--no-border" alt="acs url" src="/assets/images/configuration/acs-url.png"/></figure>
-  <p>El valor predeterminado de la URL de ACS es.<code translate="No">https://auth.bcvp0rtal.com/login/callback</code> También se puede redefinir la ACL URL facilitando una dirección URL propia. Estas dos opciones se pueden emplear para configurar proveedores SSO más estrictos. </p>
-  <aside class="bcls-aside">Nota: Cuando se utiliza un flujo de trabajo de inicio de sesión único iniciado por un IDP, la URL de ACS especificada en el software SSO debe apuntar a un sitio de Brightcove Engage configurado con ese perfil de control de acceso. En este caso, no se debe usar la <code translate="No">https://auth.bcvp0rtal.com/login/callback</code> URL.</aside>
+  <p>Su proveedor de SSO requerirá una URL de servicio del consumidor de afirmación (URL ACS). La URL de ACS aparece en la sección SSO de la tabla Perfiles de control de acceso.</p>
+  <figure class="bcls-figure"><img class="bcls-image--no-border" alt="acs url" src="/assets/images/configuration/acs-url.png" /></figure>
+  <p>La URL de ACS tiene como valor predeterminado <code translate="No">https://auth.bcvp0rtal.com/login/callback</code>. También puede anular la URL ACS proporcionando su propia URL. Ambas opciones se pueden utilizar para configurar proveedores de SSO más estrictos.</p>
+  <aside class="bcls-aside">Nota: Cuando utilice un flujo de trabajo de SSO iniciado por IDP, la URL de ACS especificada en su software de SSO debe apuntar a un sitio de Brightcove Engage que esté configurado con ese perfil de control de acceso. En este caso, no se debe utilizar la <code translate="No">https://auth.bcvp0rtal.com/login/callback</code> URL.</aside>
 </section>
-
-<!-- complete bootstrap layout -->
-    </div>
-    <div class="col-sm-2 right-side-bar">
-      
-      <nav class="right-side-nav" id="right_side_nav">
-        <h6 class="toc">Contenido de la página</h6>
-        <ul id="in_page_nav" class="list-none"></ul>
-      </nav>
-      
-    </div>
-  </div>
-</div>
-
-<hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
-    <div class="region region-footer-top-center col-md-12">
-      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
-
-        <h2>Asistencia técnica de Brightcove</h2>
-
-        <ul class="menu">
-          <li>
-            Estado del sistema<a href="https://status.brightcove.com"></a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Contactar soporte</a>
-          </li>
-          <li>
-            <a href="https://support.brightcove.com/">Documentación</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
-
-        <h2>Formación</h2>
-
-        <ul class="menu">
-          <li>
-            Cursos en línea<a href="https://studio.support.brightcove.com/training/online-training-courses.html"></a>
-          </li>
-          <li>
-            Inscríbete a un curso<a href="https://studio.support.brightcove.com/training/register-training.html"></a>
-          </li>
-          <li>
-            <a href="https://university.brightcove.com/">Universidad de Brightcove</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
-
-        <h2>Brightcove</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://www.brightcove.com">BrightCove.com</a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Contáctanos</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-  <div class="row">
-    <div class="region region-footer-bottom-center col-md-12">
-      <div class="bcls-copyright footer-menu">
-        <table>
-          <tr>
-            <td>
-              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
-            </td>
-            <td>Privacidad | Términos y Condiciones<a href="https://www.brightcove.com/en/legal/privacy"></a><a href="https://www.brightcove.com/en/terms-and-conditions"></a></td>
-            <td>
-              <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script>
-      
-  var searchBox = sajari.init({
-    mode: "search-box",
-    project: "1588255093746585379", // Set this to your project.
-    collection: "brightcove-documenation", // Set this to your collection.
-    instantPipeline: "autocomplete", // Pipeline used as you type
-    inputPlaceholder: "Search", // Input element placeholder
-    maxSuggestions: 5, // Maximum number of suggestions to show
-    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
-  });
-  
-    searchBox("sub", "pipeline.search-sent", function (_, query) {
-      window.location = "/search.html?q=" + encodeURIComponent(query.q);
-    });
-  
-
-</script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
-  <script src="/assets/js/sites_nav.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
-  <script src="/assets/js/feedback.js"></script>
-  
-  <script src="/assets/js/sajari-search-foot.js"></script>
-  
-  <!-- <script src="/assets/js/sajari-index.js"></script> -->
-  <style>
-    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
-      background-color: lightblue;
-    }
-    div.sj-tabs__tab {
-      margin-top: 3rem;
-      margin-left: .3rem;
-      border-top-left-radius: .4rem;
-      border-top-right-radius: .4rem;
-      background-color:#e8e8e8;
-    }
-
-    div.sj-tabs__tab.sj-tabs__tab--selected {
-      border-bottom-color: crimson;
-      background-color: #f8f8f8;
-    }
-
-    p.sj-results__result__description.css-p9jvyt {
-      font-size: 1rem;
-    }
-
-    .sj-result__text.css-31l7gp h3 {
-      color: navy;
-      font-size: 1.4rem;
-    }
-    </style>
-
-</body>
-
-</html>
